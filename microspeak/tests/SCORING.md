@@ -5,10 +5,39 @@ How to score a MicroSpeak test run reproducibly.
 ## Task A - condensation
 
 ```
-two independent scores
+three independent scores
     never collapse them into one number
     a model can be perfectly formatted and lossy
-    lossy is the failure that matters
+    a model can keep every fact and still lie
+        through nesting alone
+```
+
+### Nesting truth - scored FIRST, gates the rest
+
+```
+every indent asserts
+    child is PART OF / CAUSED BY / DETAIL OF / EVIDENCE FOR parent
+
+procedure
+    read each indent as "<child> is part of <parent>"
+    mark it
+        TRUE        - source supports it
+        UNSUPPORTED - source never said it
+        FALSE       - source denied it
+
+scoring
+    any FALSE indent     -> run failed, no other score matters
+    any UNSUPPORTED      -> -1 fact-equivalent each
+    treat a FALSE indent as a fabricated fact
+        not a format problem
+        it asserts something the source denied
+        while every line reads as true
+
+why this gates
+    a fact loss leaves a gap a reader can notice
+    a false parent reads as confident and correct
+    it survives proofreading
+        because no single line is wrong
 ```
 
 ### Fact score

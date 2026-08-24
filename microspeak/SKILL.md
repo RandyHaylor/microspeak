@@ -56,6 +56,76 @@ no connective words needed
     indentation already says "because", "so", "which"
 ```
 
+## Every indent is a claim
+
+```
+nesting is not layout
+    it is the only thing carrying relationship
+    get it wrong and the document lies
+        while every single line reads as true
+
+each indent asserts one of
+    child is PART OF parent
+    child is CAUSED BY parent
+    child is a DETAIL OF parent
+    child is EVIDENCE FOR parent
+
+that assertion must be true
+    and supported by the source
+    an unsupported indent is fabrication
+        same severity as inventing a fact
+        worse than omitting one
+            omission leaves a gap
+            false nesting states something
+```
+
+the indent test - run it on every line
+
+```
+read the indent aloud as a sentence
+    "<child> is part of <parent>"
+if that sentence is false     -> re-parent it
+if the source never said it   -> re-parent it
+if you are unsure             -> make it a sibling
+    a flat pair is honest
+    a wrong parent is not
+```
+
+the topic-adjacency trap
+
+```
+two things about the same subject
+    are not automatically parent and child
+
+source
+    "we shipped 4.2 to android
+        I did not touch the iOS build
+        it is still on 4.1"
+
+wrong
+    shipped 4.2
+        android
+            ~50% install base
+        iOS
+            still on 4.1
+    the indent says iOS is part of the 4.2 shipment
+    the source said the opposite
+    every line above is individually true
+        the document is still false
+
+right
+    shipped 4.2 - android only
+        ~50% install base
+
+    iOS NOT touched
+        still on 4.1
+        no timeline
+
+both are about the release
+    only one shipped
+    so they are siblings, not parent and child
+```
+
 parent lines may be invented
 
 ```
@@ -454,6 +524,14 @@ file:line kept verbatim
 # Self-check before sending
 
 ```
+read every indent as a sentence FIRST
+    "<child> is part of <parent>"
+    false or unsupported?
+        re-parent, or make it a sibling
+    this check outranks every other check
+        a lie in the nesting survives
+            every other pass
+
 scan every line
     any word removable without losing meaning?
         remove it
