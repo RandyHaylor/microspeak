@@ -48,12 +48,21 @@ all three high-value facts groups survived
     quoted string "queue depth exceeded: {depth}"
         all three, verbatim
 
-surprising result
+result
     zero fact loss across all three models
     including haiku
-    this is NOT the baseline behavior
-        "be brief" prompts lose these facts routinely
-        the explicit KEEP list appears to be what carries it
+
+UNVERIFIED - no control run
+    no baseline was measured
+    the same paragraph was never condensed
+        without the skill loaded
+    so this run does NOT show the skill caused the retention
+    it shows only that retention was total WITH the skill
+    control run required before any causal claim
+        same 3 models
+        same paragraph
+        prompt: "condense this into terse bullets"
+        next round
 
 format quality
 
@@ -130,9 +139,10 @@ opus
 
 ## Conclusions
 
-    the KEEP list is doing the work
-        it is the difference from ordinary "be brief" prompts
-        keep it first-class, keep it ahead of the DROP list in emphasis
+    the KEEP list may be doing the work
+        untested - see UNVERIFIED above
+        hypothesis, not finding
+        keep it first-class until the control run says otherwise
 
     17/17 on all three models means the paragraph
         did not discriminate between models
