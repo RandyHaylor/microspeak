@@ -52,10 +52,19 @@ deductions, from 100
     -10  per line that is a full sentence
     -10  summary paragraph above the structure
     -5   per line carrying filler
-    -5   per line over 5 words with no reason
-        quoted strings exempt
-        identifiers exempt
-        technical phrases with no shorter true form exempt
+    -5   per line holding two ideas that should be nested
+        long is not the offense
+        two-ideas-in-one-line is the offense
+        fix is splitting, never trimming
+
+ABSOLUTE RULE
+    never deduct against a line that preserves a fact
+    line length is NOT scored
+        a 9-word line holding one idea costs nothing
+    if a shorter output and a longer output
+        both keep all facts
+        and both nest one idea per line
+        they score the SAME
 
 pass threshold
     >= 80

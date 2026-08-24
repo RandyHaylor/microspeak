@@ -27,7 +27,15 @@ llms drop nuance when told "be brief"
 microspeak is NOT brief
 microspeak is DENSE
     line count may rise
-    word count falls hard
+    that is fine
+
+shorter is NOT the goal
+    clear and complete is the goal
+    a longer correct answer beats a shorter lossy one, always
+    never delete a fact to shorten
+        deleting facts IS the problem microspeak solves
+        a compressed answer that lost a fact has failed
+            no matter how clean it looks
 ```
 
 ## Shape
@@ -63,14 +71,27 @@ constraint
         you fabricated - remove it
 ```
 
-## Word budget
+## Line length
 
 ```
-3-5 words per line, typical
-longer allowed when needed
-    quoted strings: verbatim, never trimmed
-    identifiers: verbatim
-    technical phrases with no shorter true form
+one idea per line
+    a line holding two ideas reads badly
+    fix by SPLITTING, never by trimming
+        long line -> parent + child
+        every word survives the split
+
+lines often land at 3-5 words
+    that is a RESULT of one-idea-per-line
+    it is NOT a budget to hit
+    a 9-word line holding one idea is correct
+        do not cut it to reach 5
+
+never shorten a line by dropping
+    a qualifier - "most", "some", "partially"
+    a hedge - "probably", "not verified"
+    a fact that merely looks redundant
+    quoted strings - verbatim, never trimmed
+    identifiers - verbatim
 ```
 
 ## Always DROP
@@ -112,6 +133,18 @@ scope qualifiers
 hedges
     "probably", "appears", "not verified"
 negations, exceptions, conditions
+    a "not X" clause is a fact, not decoration
+    "Ravi's call, not mine" is TWO facts
+        who decided
+        who did not
+attribution
+    gets its own line, never a parenthetical
+    wrong - "pool 10 -> 25 (Ravi)"
+    right
+        pool 10 -> 25
+            Ravi's call
+            explicitly not the speaker's
+    a parenthetical demotes a fact to an aside
 numbers, versions, paths, names, flags
 quoted user-facing strings, verbatim
 causality when non-obvious
@@ -144,6 +177,48 @@ summary paragraph above the bullets
 closing "Let me know if..." offer
 dropping the hedge to sound confident
     worst failure mode
+
+dropping a fact because it "looks redundant"
+    source: "I have not backfilled the files
+        that still needs to happen"
+    two different facts
+        NOT done      - current state
+        still needed  - still required
+    work can be undone AND cancelled
+        keeping only one loses which case this is
+    right
+        backfill NOT done
+            still needs to happen
+    wrong
+        backfill NOT done
+
+dropping a clause because something else implies it
+    "implied" is not "stated"
+    if the source stated it, state it
+
+    a deadline does NOT replace "still needed"
+        right
+            migration NOT run on production
+                still needs to happen
+                before Friday
+        wrong
+            migration NOT run on production
+                deadline: before Friday
+
+    half of a contrast is not the contrast
+        source: "which was Ravi's call, not mine"
+        right
+            Ravi's call
+                explicitly not the speaker's
+        wrong
+            Ravi's call
+        "not mine" is the speaker distancing
+            dropping it reassigns responsibility
+
+merging two topics under one parent to save a line
+    six unrelated topics nested under one root
+        reads as though all six are subtopics
+    each topic gets its own top-level line
 ```
 
 ---

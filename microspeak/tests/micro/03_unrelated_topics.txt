@@ -1,0 +1,1 @@
+I bumped the log retention from 7 to 30 days. Separately, the staging database was restored from Tuesday's snapshot. Also the on-call rotation now includes Marcus. None of these are related to each other.
