@@ -164,6 +164,81 @@ pick the parent name AFTER you know its children
         can go false when you add a 3rd
 ```
 
+## A detail belongs to what it is ABOUT
+
+```
+not to what it was mentioned NEAR
+
+prose runs in one line
+    a detail often appears beside the wrong topic
+    that adjacency is an accident of sentence order
+    it is not a relationship
+
+for each detail ask
+    what is this a detail OF
+    not
+    what did I write just before it
+```
+
+worked - the cutover
+
+```
+source
+    "we rolled out the new search index to the EU region
+        the US region is still on the old index
+        and I have not scheduled the cutover yet"
+
+wrong
+    search index rolled out - EU only
+        Thursday
+        cutover NOT scheduled
+
+    US region
+        still on old index
+
+    the cutover is the US cutover
+    filed under an EU parent it reads as
+        "the EU cutover is not scheduled"
+    and the US topic is left without its key fact
+        a reader scanning "US region"
+            sees only "still on old index"
+            and misses the open work
+
+right
+    search index rolled out - EU only
+        Thursday
+
+    US region
+        still on old index
+        cutover NOT scheduled
+```
+
+worked - the region
+
+```
+wrong
+    search index EU rollout
+        US region
+            still on old index
+    US was not part of the EU rollout
+
+right
+    US region
+        still on old index
+```
+
+the orphan check
+
+```
+after placing every detail
+    read each top-level topic ALONE
+    does it still carry its own open work
+        its own numbers
+        its own unfinished items
+    if a topic reads thinner than the source
+        a detail of it was filed elsewhere
+```
+
 parent lines may be invented
 
 ```
