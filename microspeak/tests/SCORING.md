@@ -52,9 +52,32 @@ test_paragraph_condense_input.md
     9 ordinary    ->  9
     max           -> 33
 
+presence is not correctness
+    check every fact for BOTH
+        is it there
+        is its value right
+    a present fact with a wrong value scores WORSE than a missing one
+        missing  - reader sees a gap
+        wrong    - reader acts on a false number
+
+    wrong-value categories to check explicitly
+        dates and days
+            a nearby date is a plausible wrong anchor
+        numbers, versions, counts
+        directions of change
+            "3 -> 5" reported as "5 -> 3"
+        who did what
+            attribution swapped between people
+        quoted strings altered
+            any edit at all is a wrong value
+
+    scoring
+        wrong value on a high-value fact  -> run failed
+        wrong value on an ordinary fact   -> -2, not -1
+
 credit
-    full    fact present, meaning intact
-    half    fact present, meaning weakened
+    full    fact present, value right, meaning intact
+    half    fact present, value right, meaning weakened
         "mostly" for "most of the backlog"
             still scopes - full credit
         "cleared backlog" with no qualifier

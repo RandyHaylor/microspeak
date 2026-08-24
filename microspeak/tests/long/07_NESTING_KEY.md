@@ -49,7 +49,9 @@ TRAP 4 - flag rename nested under search work
 9   HV  NOT caused by the index rollout
 10      cause - bad autoscaling rule
 11  HV  attribution - Fatima pushed it
-12      same morning
+12      Friday morning
+            wrong value if reported as Thursday
+            Thursday is the rollout day, a plausible wrong anchor
 13      rule reverted
 14      latency recovered within the hour
 15      'fuzzy_match' renamed to 'typo_tolerance'

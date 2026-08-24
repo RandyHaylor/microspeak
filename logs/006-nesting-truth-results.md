@@ -126,24 +126,36 @@ date
             so this is a parent-naming failure
                 as much as a placement failure
 
-### NEW - fabricated date, not previously tested for
+### date mismatch - I scored this wrong
 
-    source
-        spike seen Friday
-        rule pushed "the same morning"
-            = Friday morning
-
-    haiku
+    haiku wrote
         "Fatima pushed Thursday morning"
 
-    Thursday is the rollout day
-    haiku anchored on the wrong day and stated it flatly
-    invention, not omission
-    no hedge, no uncertainty
+    I called this a fabrication. That claim was wrong.
 
-    the fact keys were not checking date accuracy
-        they checked presence, not correctness
+    the test sentence was ambiguous
+        "the latency spike people saw Friday
+            was not caused by the index rollout,
+            it was a bad autoscaling rule
+            that Fatima had pushed the same morning"
+        "the same morning" has two candidate referents
+            the spike's day - Friday
+            the rollout named in the same clause - Thursday
+    I read it as Friday and scored haiku wrong on that basis
+    the ambiguity was in MY input, not necessarily haiku's output
+    haiku may have taken a defensible reading
+
+    test text corrected
+        now reads "pushed on Friday morning"
+        unambiguous, trap preserved
+    key updated
+        Thursday is now an explicit wrong-value case
+        it remains a plausible wrong anchor - the rollout day
+
+    what stands regardless
+        the fact keys checked presence, not correctness
         a fact can be PRESENT and WRONG
+        no rubric category existed for that
 
 ## Open
 

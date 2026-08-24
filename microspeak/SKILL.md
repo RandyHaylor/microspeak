@@ -126,6 +126,44 @@ both are about the release
     so they are siblings, not parent and child
 ```
 
+## Name the parent to match what it holds
+
+```
+a parent's name sets the scope of every indent under it
+    name it narrow -> children must all be inside that scope
+    name it wide   -> children may vary
+
+source
+    "rolled out the new search index to the EU region
+        the US region is still on the old index"
+
+wrong
+    search index EU rollout
+        US still on old index
+    the indent now reads
+        "US is part of the EU rollout"
+    false
+
+two ways to fix
+
+    widen the parent
+        search index migration
+            EU - rolled out Thursday
+            US - still on old index
+
+    or split into siblings
+        search index rolled out - EU
+            Thursday
+
+        US region
+            still on old index
+
+pick the parent name AFTER you know its children
+    then re-read every indent under it
+    a name that was honest with 2 children
+        can go false when you add a 3rd
+```
+
 parent lines may be invented
 
 ```
@@ -517,6 +555,85 @@ notes
 "yes" alone would be wrong
     "partially" is the honest head
 file:line kept verbatim
+```
+
+## Example 6 - a contrast clause buried in a long report
+
+the hardest case in practice
+    the rule is easy in isolation
+    it gets dropped when 15 other facts compete for attention
+    so here it is under load
+
+prose
+
+```
+We shipped 4.2 to about half the Android install base on Tuesday, staged
+rollout, and I have not promoted it to the remaining users. Crash-free
+sessions are at 99.4 percent, slightly better than 4.1, though the sample
+is only two days old so I would not read much into it. The biggest fix was
+the camera permission prompt appearing twice on first launch, which was a
+duplicate call in the onboarding flow, and Wei found it, not me. The prompt
+now reads 'Allow PhotoSync to use your camera?' and appears once. We raised
+the upload chunk size from 1 MB to 4 MB, which cut median upload time
+roughly in half on wifi, but we have no cellular numbers at all. I did not
+touch the iOS build; it is still on 4.1 and there is no timeline.
+```
+
+microspeak
+
+```
+shipped 4.2 - Android only
+    ~half the install base
+    staged rollout
+    Tuesday
+    NOT promoted to remaining users
+
+crash-free sessions 99.4 percent
+    slightly better than 4.1
+    sample only 2 days old
+        would not read much into it
+
+camera permission prompt appeared twice
+    on first launch
+    biggest fix in the build
+    cause - duplicate call in onboarding flow
+    found by Wei
+        NOT by the speaker
+    now appears once
+        'Allow PhotoSync to use your camera?'
+
+upload chunk size 1 MB -> 4 MB
+    median upload time cut roughly in half
+        on wifi
+    no cellular numbers at all
+
+iOS NOT touched
+    still on 4.1
+    no timeline
+```
+
+what survives here that usually does not
+
+```
+"not me"
+    kept as its own line - "NOT by the speaker"
+    NOT collapsed to "found by Wei"
+    NOT demoted to "(Wei)"
+    the speaker is disclaiming credit
+        drop it and you assign them the find
+
+"about half"
+    kept - "~half the install base"
+    not rounded away to "shipped to Android"
+
+"no cellular numbers at all"
+    kept as a sibling of the wifi result
+    the wifi number alone implies coverage that does not exist
+
+iOS
+    top-level, NOT under "shipped 4.2"
+    parent renamed "shipped 4.2 - Android only"
+        so no indent under it can over-claim
 ```
 
 ---
