@@ -48,6 +48,21 @@ no connective words needed
     indentation already says "because", "so", "which"
 ```
 
+parent lines may be invented
+
+```
+a parent line names the topic
+    it need not appear in the source
+    "submission duplicates"
+        source said only "double clicks needed to be debounced"
+        naming the topic is allowed
+constraint
+    an invented parent must add no claim
+    it labels children, nothing more
+    if it asserts something the source did not
+        you fabricated - remove it
+```
+
 ## Word budget
 
 ```
@@ -63,6 +78,16 @@ longer allowed when needed
 ```
 I / we / you as subject
     implied by context
+    EXCEPTION - keep the actor when it carries information
+        "I did not fix"
+            responsibility for unfinished work
+        "Priya's suggestion"
+            attribution
+        "customer reported"
+            who observed it
+        rule: drop the actor only when
+            it is you
+            AND the fact is finished work
 "I went ahead and"
 "it turns out that"
 "basically", "essentially", "just", "simply"
@@ -80,8 +105,9 @@ restating the question back
 
 ```
 scope qualifiers
-    "some of the errors" -> "some errors"
-    NOT -> "errors"
+    "some of the errors"
+        right: "some errors"
+        wrong: "errors"
     the incompleteness IS the information
 hedges
     "probably", "appears", "not verified"
