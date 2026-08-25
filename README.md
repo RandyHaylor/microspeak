@@ -26,38 +26,28 @@ Standard output is verbose prose, which can be massive and hard to digest for co
 ### Examples of detail loss in ai agent output when asked to use terse bullets
 
 ```
-scope qualifiers
-    "some of the errors"
-        -> "errors"
-hedges
-    "not verified in prod"
-        -> gone
-unfinished work
-    "I did not fix that"
-        -> gone
-attribution
-    "Priya's suggestion"
-        -> gone
+- Fixed flaky tests in the auth suite
+- Bumped S3 retry count from 3 to 5
+- Parquet writer is the slowest step
 ```
 
-### The same outputs when asked to use the microspeak skill
+Gone: that only *some* tests were fixed, the billing suite nobody looked at, whose idea the retry change was, the doubt that it helps at all, and that the parquet writer was never touched.
+
+### The same content when asked to use the microspeak skill
 
 ```
-scope qualifiers
-    some errors fixed
-        not all
+fixed some flaky tests
+    auth suite
+    billing suite NOT looked at
 
-hedges
-    works in staging
-        NOT verified in prod
+S3 retry count 3 -> 5
+    Priya's suggestion
+    may not fix root cause
+        permission errors, not load
 
-unfinished work
-    UNFIXED - parquet writer
-        not touched
-
-attribution
-    retry count 3 -> 5
-        Priya's suggestion
+parquet writer
+    not touched
+    still slowest step
 ```
 
 ---
