@@ -104,10 +104,11 @@ Then just say it:
 
 ```
 convert this to microspeak
-use microspeak
 ```
 
-Verified on Claude Haiku 4.5, Sonnet, and Opus. All three load and apply it from those phrases alone.
+Verified on Claude Haiku 4.5, Sonnet, and Opus — all three discover and invoke the skill from that phrase alone, with the `Skill` tool call captured in the transcript as proof.
+
+The trailing form `use microspeak` appended to a work request is less reliable. Haiku once ignored it entirely, announced "Using microspeak to report:", and then produced ordinary markdown. That was against an early version of the skill and has not been re-tested since. Lead with the phrase rather than tacking it on the end.
 
 ---
 
