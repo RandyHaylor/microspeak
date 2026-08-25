@@ -38,53 +38,6 @@ attribution
 
 ---
 
-## Measured
-
-Real opus output, same input, from `logs/010-control-run.md`. Only difference: whether the skill was installed.
-
-Without:
-
-```
-- **Ontario tenants** — export
-  completed on the 14th, covering
-  ~80% of their records.
-- **Quebec tenants** — skipped
-  entirely; different retention
-  policy, handling not yet decided.
-- **Validation** — checked against
-  sample checksums only, not the
-  full set. Not verified.
-- **Authorship** — Priyanka wrote
-  the export script; I only ran it.
-```
-
-Line breaks added to fit; wording untouched. Every bullet was one long line.
-
-With:
-
-```
-compliance export finished - Ontario tenants only
-    the 14th
-    ~80 percent of their records
-
-Quebec tenants skipped entirely
-    retention policy is different
-    no decision on how to handle it
-
-validation partial
-    validated against sample checksums
-    NOT validated against full set
-    would not call it verified
-
-export script written by Priyanka
-    NOT by the speaker
-    speaker only ran it
-```
-
-Same facts. Quebec is a sibling, not a child — the source said it was skipped entirely, so nesting it under Ontario would have been false.
-
----
-
 ## Install
 
 ```
