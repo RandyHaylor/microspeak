@@ -26,10 +26,14 @@ Ask for prose and you get prose. Ask for brief and it drops facts. Nothing in be
 The casualties are always the same:
 
 ```
-scope qualifiers   "some of the errors"   -> "errors"
-hedges             "not verified in prod" -> gone
-unfinished work    "I did not fix that"   -> gone
-attribution        "Priya's suggestion"   -> gone
+scope qualifiers
+    "some of the errors" -> "errors"
+hedges
+    "not verified in prod" -> gone
+unfinished work
+    "I did not fix that" -> gone
+attribution
+    "Priya's suggestion" -> gone
 ```
 
 Losing "some of" turns a partial fix into a complete one. The reader cannot notice, because everything left on the page is true.
@@ -43,16 +47,17 @@ Real opus output, same input, from `logs/010-control-run.md`. Only difference: w
 Without:
 
 ```
-- **Ontario tenants** — export completed on
-  the 14th, covering ~80% of their records.
-- **Quebec tenants** — skipped entirely;
-  different retention policy, handling not
-  yet decided.
-- **Validation** — checked against sample
-  checksums only, not the full set. Not
-  verified.
-- **Authorship** — Priyanka wrote the export
-  script; I only ran it.
+- **Ontario tenants** — export
+  completed on the 14th, covering
+  ~80% of their records.
+- **Quebec tenants** — skipped
+  entirely; different retention
+  policy, handling not yet decided.
+- **Validation** — checked against
+  sample checksums only, not the
+  full set. Not verified.
+- **Authorship** — Priyanka wrote
+  the export script; I only ran it.
 ```
 
 Line breaks added to fit; wording untouched. Every bullet was one long line.
@@ -122,10 +127,14 @@ Verified on Haiku 4.5, Sonnet, and Opus, with the `Skill` tool call captured as 
 ## Layout
 
 ```
-microspeak/SKILL.md   the skill
-microspeak/tests/     inputs, keys, raw output
-logs/                 history, 000-011
-CLAUDE.md             original brief
+microspeak/SKILL.md
+    the skill
+microspeak/tests/
+    inputs, keys, raw output
+logs/
+    history, 000-011
+CLAUDE.md
+    original brief
 ```
 
 ## Testing
