@@ -21,9 +21,9 @@ Consistently, and without losing important detail.
 
 ## The problem
 
-Ask for prose and you get prose. Ask for brief and it drops facts. Nothing in between gives you both.
+Standard output is verbose prose, which can be massive and hard to digest for complex technical topics. If you ask for terse, bulleted output, a lot of nuance and detail is culled. This skill fixes that with a proven set of examples and instructions to align the agent to use a full detailed but efficient output format.
 
-The casualties are always the same:
+What gets culled is always the same:
 
 ```
 scope qualifiers
@@ -35,8 +35,6 @@ unfinished work
 attribution
     "Priya's suggestion" -> gone
 ```
-
-Losing "some of" turns a partial fix into a complete one. The reader cannot notice, because everything left on the page is true.
 
 ---
 
