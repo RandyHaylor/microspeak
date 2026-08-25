@@ -85,10 +85,10 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the mo
 
 ## What it enforces
 
-- **Nothing that carries meaning gets dropped** — qualifiers, hedges, negations, attribution and quoted strings all survive. So do facts that look redundant but aren't: "not done" and "still needed" mean different things.
-- **Indentation has to be true** — a child line must really belong under its parent. Get it wrong and every line reads as true while the document says something false.
-- **Details go under what they're about** — not under whatever they happened to be mentioned next to.
-- **Long lines get split, not cut** — two ideas become a parent and a child. Filler drops out along the way; facts never do.
+- **Losslessness.** Qualifiers, hedges, negations, attribution and verbatim strings are preserved, as are facts that appear redundant but aren't — "not done" and "still needed" are distinct claims, since work can be both undone and cancelled.
+- **Nesting is semantic.** An indent asserts the child is part of, caused by, a detail of, or evidence for its parent. A false parent produces a document in which every line is individually true and the whole is false — a failure that survives proofreading, because there is no incorrect line to find.
+- **Attachment follows subject, not proximity.** Prose serialises everything onto one line, so a detail routinely sits adjacent to a topic it does not belong to. Placement is decided by what the detail is about.
+- **Length is not a target.** A long line means two ideas sharing one line, resolved by splitting into parent and child. Connectives and filler fall away, because the structure already encodes ownership, causality and order. Facts do not.
 
 ---
 
