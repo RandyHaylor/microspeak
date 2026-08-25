@@ -43,7 +43,7 @@ fixed some flaky tests
 S3 retry count 3 -> 5
     Priya's suggestion
     may not fix root cause
-        permission errors, not load
+    errors were permission, not load
 
 parquet writer
     not touched
