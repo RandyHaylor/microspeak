@@ -57,9 +57,7 @@ use the microspeak skill
 convert this to microspeak
 ```
 
-Say **"the microspeak skill"**, not just "microspeak". Naming it makes the model load it instead of improvising something that looks like it. Haiku once took a bare trailing "use microspeak", announced *"Using microspeak to report:"*, then produced ordinary markdown.
-
-Verified on Haiku 4.5, Sonnet, and Opus, with the `Skill` tool call captured as proof it loaded.
+Say **"the microspeak skill"**, not just "microspeak" — naming it makes the model load the skill rather than improvise something that looks like it.
 
 ---
 
@@ -88,40 +86,8 @@ CLAUDE.md
     original brief
 ```
 
-## Testing
+## Model support
 
-**Micro** — 2-3 sentences, one failure mode each.
-**Long** — multi-topic reports. `07` baits false nesting with four traps. `08` is held out: same failure patterns as the worked examples, but appears nowhere in the skill, so it measures generalization rather than recall.
+Verified on Claude Haiku 4.5, Sonnet, and Opus.
 
-Runs use the real skill mechanism — a folder containing only `.claude/skills/microspeak/`, `--setting-sources project`, and `--output-format stream-json` to capture the `Skill` invocation as proof.
-
-Scored on three axes, never collapsed:
-
-1. **Nesting truth** — gates the rest. Any false indent fails the run.
-2. **Facts** — presence *and* correctness. A wrong value scores worse than a missing one; a gap is visible, a wrong number gets acted on.
-3. **Format** — readability only. Length is not deducted.
-
-## Findings
-
-| | held-out (08) | nesting traps (07) |
-|---|---|---|
-| opus | 15/15 | all 4 traps |
-| sonnet | 15/15 | all 4 traps |
-| haiku | 15/15 | all 4 traps |
-
-Control run, no skill, naive "terse bullets" prompt:
-
-- **opus** kept every fact — in flat prose bullets. Its retention needs no help; its structure does.
-- **haiku** lost facts. Dropped "not on real traffic", "Friday morning", "unrelated"; degraded "cutover not scheduled" into "US pending cutover"; swapped an actor, `"I only ran it"` → `"you ran it"`. With the skill: `speaker ran only`.
-
-The losslessness enforcement mainly rescues weaker models. The structural change lands at every tier.
-
-## Limitations
-
-- **Single runs.** Variance unmeasured. `06` has gone pass, pass, fail, pass across four runs.
-- **Test `05` retired.** Its paragraph became Example 6 in `SKILL.md`, so the answer is in the skill. `08` replaced it. Every example added burns a test case.
-- **`logs/001` and `logs/003`** measured instruction-following, not skill behavior — those prompts ordered agents to read `SKILL.md` by path. See `microspeak/tests/results/README.md`.
-
-## History
-
-`logs/` records every experiment and correction, including the round where the scoring rubric was found to be rewarding brevity and penalizing a model for keeping a fact.
+Test inputs and scoring keys are in `microspeak/tests/`. `logs/` records the development history — every experiment, result, and revision.
