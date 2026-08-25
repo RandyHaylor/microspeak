@@ -85,10 +85,26 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the mo
 
 ## What it enforces
 
-- **Losslessness.** Qualifiers, hedges, negations, attribution and verbatim strings are preserved, as are facts that appear redundant but aren't — "not done" and "still needed" are distinct claims, since work can be both undone and cancelled.
-- **Nesting is semantic.** An indent asserts the child is part of, caused by, a detail of, or evidence for its parent. A false parent produces a document in which every line is individually true and the whole is false — a failure that survives proofreading, because there is no incorrect line to find.
-- **Attachment follows subject, not proximity.** Prose serialises everything onto one line, so a detail routinely sits adjacent to a topic it does not belong to. Placement is decided by what the detail is about.
-- **Length is not a target.** A long line means two ideas sharing one line, resolved by splitting into parent and child. Connectives and filler fall away, because the structure already encodes ownership, causality and order. Facts do not.
+- **Losslessness**
+  - qualifiers, hedges, negations, attribution, verbatim strings — all preserved
+  - so are facts that only look redundant
+    - "not done" and "still needed" are distinct
+      - work can be undone *and* cancelled
+- **Nesting is semantic**
+  - an indent asserts: part of / caused by / detail of / evidence for
+  - a false parent
+    - every line true, document false
+    - survives proofreading — no wrong line to find
+- **Attachment follows subject, not proximity**
+  - prose serialises onto one line
+    - details land next to topics they don't belong to
+  - placement decided by what the detail is about
+- **Length is not a target**
+  - long line = two ideas sharing a line
+    - split into parent + child
+  - connectives and filler fall away
+    - structure already encodes ownership, causality, order
+  - facts never do
 
 ---
 
