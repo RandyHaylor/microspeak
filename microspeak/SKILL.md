@@ -259,9 +259,10 @@ constraint
 ```
 one idea per line
     a line holding two ideas reads badly
-    fix by SPLITTING, never by trimming
+    fix by SPLITTING, never by cutting facts
         long line -> parent + child
-        every word survives the split
+        every FACT survives the split
+        filler does not - see below
 
 lines often land at 3-5 words
     that is a RESULT of one-idea-per-line
@@ -275,6 +276,68 @@ never shorten a line by dropping
     a fact that merely looks redundant
     quoted strings - verbatim, never trimmed
     identifiers - verbatim
+```
+
+## The structure already says it - delete the words for it
+
+```
+nesting carries ownership, connection and order
+    a word that only states one of those
+        is filler
+        delete it
+    the indent already said it
+```
+
+ownership - the indent means "of" and "'s"
+
+```
+prose
+    "the read timeout for the payment service"
+wrong
+    timeout for the payment service
+right
+    payment service
+        read timeout 30s
+```
+
+connection - the indent means because, so, which, due to
+
+```
+prose
+    "the page hung because the reference was bad"
+wrong
+    page hung because of a bad reference
+right
+    page hung
+        bad reference
+```
+
+order - line order means first, then, after that
+
+```
+prose
+    "we reverted the rule and then latency recovered"
+wrong
+    reverted the rule, then latency recovered
+right
+    rule reverted
+        latency recovered
+```
+
+the test
+
+```
+does this word only express
+    whose it is
+    what caused what
+    what happened first
+if yes, and the nesting shows it
+    the word is filler
+    delete it
+
+if the nesting does NOT show it
+    keep the word
+    or fix the nesting
 ```
 
 ## Always DROP
