@@ -100,15 +100,16 @@ or per-project
 cp -r microspeak .claude/skills/
 ```
 
-Then just say it:
+Then ask for it by name:
 
 ```
+use the microspeak skill
 convert this to microspeak
 ```
 
-Verified on Claude Haiku 4.5, Sonnet, and Opus — all three discover and invoke the skill from that phrase alone, with the `Skill` tool call captured in the transcript as proof.
+Say **"the microspeak skill"**, not just "microspeak". Naming the skill is what makes the model load it rather than improvise something that looks like it. Haiku once took a bare trailing "use microspeak", announced *"Using microspeak to report:"*, and then produced ordinary markdown bullets — it pattern-matched the word without ever invoking the skill.
 
-The trailing form `use microspeak` appended to a work request is less reliable. Haiku once ignored it entirely, announced "Using microspeak to report:", and then produced ordinary markdown. That was against an early version of the skill and has not been re-tested since. Lead with the phrase rather than tacking it on the end.
+Verified on Claude Haiku 4.5, Sonnet, and Opus, with the `Skill` tool call captured in the transcript as proof the skill actually loaded.
 
 ---
 
