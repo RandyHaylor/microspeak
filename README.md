@@ -81,13 +81,10 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the mo
 
 ## What it enforces
 
-**Losslessness.** A KEEP list guards scope qualifiers, hedges, negations, attribution, quoted strings, and facts that only look redundant. `"not done"` and `"still needed"` are two facts — work can be undone *and* cancelled.
-
-**Nesting truth.** Every indent asserts the child is *part of / caused by / a detail of / evidence for* the parent. A wrong parent makes a document where every line is true and the document is false — worse than an omission, which at least leaves a visible gap. The check: read each indent as `"<child> is part of <parent>"`. False or unsupported, re-parent it.
-
-**Detail placement.** A detail belongs to what it is *about*, not what it was mentioned *near*. Prose runs in one line; adjacency is sentence order, not relationship.
-
-**Split, don't trim.** Line length is not scored. A long line means two ideas jammed together — fix with a parent and a child, not fewer words. Shorter is explicitly not the goal.
+- **Losslessness** — qualifiers, hedges, negations, attribution and quoted strings all survive, including facts that only look redundant. "not done" and "still needed" are two different facts.
+- **Nesting truth** — every indent claims the child belongs to the parent. A wrong parent gives you a document where every line is true and the document is false.
+- **Detail placement** — a detail belongs to what it is *about*, not what it was mentioned *near*.
+- **Split, don't trim** — a long line means two ideas jammed together. Fix it with a parent and a child, not fewer words. Shorter is never the goal.
 
 ---
 
