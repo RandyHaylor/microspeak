@@ -23,17 +23,41 @@ Consistently, and without losing important detail.
 
 Standard output is verbose prose, which can be massive and hard to digest for complex technical topics. If you ask for terse, bulleted output, a lot of nuance and detail is culled. This skill fixes that with a proven set of examples and instructions to align the agent to use a full detailed but efficient output format.
 
-What gets culled is always the same:
+### Examples of detail loss in ai agent output when asked to use terse bullets
 
 ```
 scope qualifiers
-    "some of the errors" -> "errors"
+    "some of the errors"
+        -> "errors"
 hedges
-    "not verified in prod" -> gone
+    "not verified in prod"
+        -> gone
 unfinished work
-    "I did not fix that" -> gone
+    "I did not fix that"
+        -> gone
 attribution
-    "Priya's suggestion" -> gone
+    "Priya's suggestion"
+        -> gone
+```
+
+### The same outputs when asked to use the microspeak skill
+
+```
+scope qualifiers
+    some errors fixed
+        not all
+
+hedges
+    works in staging
+        NOT verified in prod
+
+unfinished work
+    UNFIXED - parquet writer
+        not touched
+
+attribution
+    retry count 3 -> 5
+        Priya's suggestion
 ```
 
 ---
