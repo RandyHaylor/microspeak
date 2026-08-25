@@ -86,25 +86,22 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the mo
 ## What it enforces
 
 - **Losslessness**
-  - qualifiers, hedges, negations, attribution, verbatim strings — all preserved
-  - so are facts that only look redundant
-    - "not done" and "still needed" are distinct
-      - work can be undone *and* cancelled
+  - qualifiers, hedges, negations, attribution, verbatim strings
+  - redundant-looking facts kept
+    - "not done" ≠ "still needed"
 - **Nesting is semantic**
-  - an indent asserts: part of / caused by / detail of / evidence for
-  - a false parent
-    - every line true, document false
-    - survives proofreading — no wrong line to find
-- **Attachment follows subject, not proximity**
-  - prose serialises onto one line
-    - details land next to topics they don't belong to
-  - placement decided by what the detail is about
+  - indent asserts: part of / caused by / detail of / evidence for
+  - false parent = every line true, document false
+    - survives proofreading, no wrong line to find
+- **Attachment by subject, not proximity**
+  - prose serialises everything onto one line
+  - detail goes under what it is about
 - **Length is not a target**
-  - long line = two ideas sharing a line
-    - split into parent + child
-  - connectives and filler fall away
-    - structure already encodes ownership, causality, order
-  - facts never do
+  - long line = two ideas
+    - split to parent + child
+  - structure encodes ownership, causality, order
+    - so those words are filler
+  - filler drops, facts never
 
 ---
 
