@@ -85,10 +85,10 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the mo
 
 ## What it enforces
 
-- **Losslessness** — qualifiers, hedges, negations, attribution and quoted strings all survive, including facts that only look redundant. "not done" and "still needed" are two different facts.
-- **Nesting truth** — every indent claims the child belongs to the parent. A wrong parent gives you a document where every line is true and the document is false.
-- **Detail placement** — a detail belongs to what it is *about*, not what it was mentioned *near*.
-- **Split, don't trim** — a long line means two ideas jammed together. Fix it with a parent and a child, not fewer words. Shorter is never the goal.
+- **Nothing that carries meaning gets dropped** — qualifiers, hedges, negations, attribution and quoted strings all survive. So do facts that look redundant but aren't: "not done" and "still needed" mean different things.
+- **Indentation has to be true** — a child line must really belong under its parent. Get it wrong and every line reads as true while the document says something false.
+- **Details go under what they're about** — not under whatever they happened to be mentioned next to.
+- **Long lines get split, not cut** — two ideas become a parent and a child. Filler drops out along the way; facts never do.
 
 ---
 
