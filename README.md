@@ -23,32 +23,36 @@ Consistently, and without losing important detail.
 
 Standard output is verbose prose, which can be massive and hard to digest for complex technical topics. If you ask for terse, bulleted output, a lot of nuance and detail is culled. This skill fixes that with a proven set of examples and instructions to align the agent to use a full detailed but efficient output format.
 
-### Examples of detail loss in ai agent output when asked to use terse bullets
+Standard prose output:
 
 ```
-- Fixed flaky tests in the auth suite
+I bumped the S3 retry count from 3 to
+5 on the platform team's suggestion,
+though I doubt it fixes the timeouts
+since the failures we saw were
+permission errors rather than load.
+```
+
+Six details: what changed, the old value, the new value, whose call it was, the doubt that it helps, and why.
+
+Asked for terse bullets:
+
+```
 - Bumped S3 retry count from 3 to 5
-- Parquet writer is the slowest step
 ```
 
-Gone: that only *some* tests were fixed, the billing suite nobody looked at, whose idea the retry change was, the doubt that it helps at all, and that the parquet writer was never touched.
+**4 of 6 details lost.**
 
-### The same content when asked to use the microspeak skill
+Asked to use the microspeak skill:
 
 ```
-fixed some flaky tests
-    auth suite
-    billing suite NOT looked at
-
 S3 retry count 3 -> 5
-    Priya's suggestion
-    may not fix root cause
+    platform team's suggestion
+    may not fix timeouts
     errors were permission, not load
-
-parquet writer
-    not touched
-    still slowest step
 ```
+
+**0 of 6 details lost.**
 
 ---
 
