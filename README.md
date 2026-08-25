@@ -2,9 +2,7 @@
 
 A Claude Code skill that transforms this:
 
-```
-I merged in a couple prs for the api-gateway and admin-portal repos
-```
+> I merged in a couple prs for the api-gateway and admin-portal repos
 
 into this:
 
@@ -41,12 +39,10 @@ Real opus output, same input, from `logs/010-control-run.md`. Only difference: w
 
 Without:
 
-```
-- **Ontario tenants** — export completed on the 14th, covering ~80% of their records.
-- **Quebec tenants** — skipped entirely; different retention policy, handling not yet decided.
-- **Validation** — checked against sample checksums only, not the full set. Not verified.
-- **Authorship** — Priyanka wrote the export script; I only ran it.
-```
+> - **Ontario tenants** — export completed on the 14th, covering ~80% of their records.
+> - **Quebec tenants** — skipped entirely; different retention policy, handling not yet decided.
+> - **Validation** — checked against sample checksums only, not the full set. Not verified.
+> - **Authorship** — Priyanka wrote the export script; I only ran it.
 
 With:
 
@@ -113,10 +109,10 @@ Verified on Haiku 4.5, Sonnet, and Opus, with the `Skill` tool call captured as 
 ## Layout
 
 ```
-microspeak/SKILL.md      the skill
-microspeak/tests/        inputs, scoring keys, raw model output
-logs/                    breadcrumb history, 000-011
-CLAUDE.md                original brief
+microspeak/SKILL.md   the skill
+microspeak/tests/     inputs, keys, raw output
+logs/                 history, 000-011
+CLAUDE.md             original brief
 ```
 
 ## Testing
