@@ -1,6 +1,6 @@
 # MicroSpeak
 
-A Claude Code skill that transforms this:
+An AI agent skill that transforms this:
 
 ```
 I merged in a couple prs for the
@@ -62,15 +62,21 @@ why it may not
 
 ## Install
 
-```
-cp -r microspeak ~/.claude/skills/
-```
+`microspeak/SKILL.md` is plain markdown. Any agent that loads standing instructions can use it.
 
-or per-project
+**Claude Code** — user level:
 
 ```
-cp -r microspeak .claude/skills/
+DEST=~/.claude/skills/microspeak
+mkdir -p $DEST
+cp microspeak/SKILL.md $DEST
 ```
+
+or per-project, into `.claude/skills/microspeak/`.
+
+**Any other agent** — drop the file where that agent reads persistent instructions: an `AGENTS.md`, a rules or memory file, a custom-instructions box, or the system prompt.
+
+The YAML frontmatter at the top is Claude Code's skill header. Elsewhere it is inert — leave it or strip it, either works. The body below it is the skill.
 
 Ask for it by name:
 
@@ -79,7 +85,7 @@ use the microspeak skill
 convert this to microspeak
 ```
 
-Say **"the microspeak skill"**, not just "microspeak" — naming it makes the model load the skill rather than improvise something that looks like it.
+Say **"the microspeak skill"**, not just "microspeak" — naming it makes the agent load the skill rather than improvise something that looks like it.
 
 ---
 
@@ -112,14 +118,13 @@ microspeak/SKILL.md
     the skill
 microspeak/tests/
     inputs, keys, raw output
-logs/
-    history, 000-011
-CLAUDE.md
-    original brief
 ```
 
-## Model support
+## Compatibility
 
-Verified on Claude Haiku 4.5, Sonnet, and Opus.
+- **Verified** — Claude Haiku 4.5, Sonnet, Opus, loaded through Claude Code's skill mechanism
+- **Untested elsewhere** — Codex, OpenCode and the rest are expected to work, not measured
+  - the skill is instructions, not tooling
+  - nothing in it is Claude-specific except the frontmatter
 
-Test inputs and scoring keys are in `microspeak/tests/`. `logs/` records the development history — every experiment, result, and revision.
+Test inputs, scoring keys and raw model output are in `microspeak/tests/`.
