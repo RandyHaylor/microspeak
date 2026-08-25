@@ -33,15 +33,11 @@ since the failures we saw were
 permission errors rather than load.
 ```
 
-Six details: what changed, the old value, the new value, whose call it was, the doubt that it helps, and why.
-
 Asked for terse bullets:
 
 ```
 - Bumped S3 retry count from 3 to 5
 ```
-
-**4 of 6 details lost.**
 
 Asked to use the microspeak skill:
 
@@ -52,7 +48,13 @@ S3 retry count 3 -> 5
     errors were permission, not load
 ```
 
-**0 of 6 details lost.**
+Details lost without microspeak:
+
+```
+whose call it was
+the doubt it helps
+why it may not
+```
 
 ---
 
