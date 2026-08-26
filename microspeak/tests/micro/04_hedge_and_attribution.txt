@@ -1,1 +1,0 @@
-I raised the connection pool size from 10 to 25, which was Ravi's call, not mine. I doubt it fixes the timeouts because the slow queries all showed up as lock waits rather than pool exhaustion. It did not make anything worse in staging.

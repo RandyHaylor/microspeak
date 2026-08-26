@@ -1,1 +1,0 @@
-The migration script has not been run against production yet. It still needs to happen before Friday. Dana said she would rather we do it during the maintenance window, though she is not sure the window is long enough.

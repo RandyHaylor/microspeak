@@ -120,7 +120,5 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the ag
 ```
 microspeak/SKILL.md
     the skill
-microspeak/tests/
-    inputs, keys, raw output
 ```
 
