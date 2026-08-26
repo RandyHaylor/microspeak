@@ -219,7 +219,7 @@ I raised the S3 retry count 3 -> 5
     - Failures were permission errors
         * Not load
 
-I did NOT touch the parquet writer
+Parquet writer NOT touched
     - Still the slowest step
 ```
 
