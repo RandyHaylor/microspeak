@@ -56,6 +56,90 @@ no connective words needed
     indentation already says "because", "so", "which"
 ```
 
+## Topic headers
+
+```
+when to use
+    more than 3 top-level topics -> use headers
+    3 or fewer -> no headers, plain microspeak
+```
+
+syntax
+
+```
+===start:s3 retry change===
+
+S3 retry count 3 -> 5
+    platform team's suggestion
+    may not fix timeouts
+
+rollback script
+    never tested against staged rollout
+
+===end:s3 retry change===
+```
+
+rules
+
+```
+blank line after ===start:...===
+blank line before ===end:...===
+blank line between blocks
+
+header text
+    a sentence fragment, never a full sentence
+    longer than a normal microspeak line is fine
+    names the AREA, not the findings
+
+content inside a header
+    starts at column 0
+    a header adds NO indent level
+    normal microspeak, unchanged
+```
+
+## Response summary
+
+```
+the last thing in the response
+    after every topic block
+    always present when headers are used
+```
+
+```
+===response summary===
+
+- s3 retry change
+- rollback script coverage
+- open decisions
+```
+
+what it is
+
+```
+a table of contents
+    what the response COVERS
+    NOT what the response SAYS
+
+one short line per area
+    no numbers
+    no findings
+    no conclusions
+    the reader scans it to pick where to look
+
+wrong - restates the content
+    - retry count 3 -> 5, may not fix timeouts
+right - names the area
+    - s3 retry change
+```
+
+why it stays empty of detail
+
+```
+the detail is already above it
+    repeating it doubles the reading
+    and invites a lossy second version
+```
+
 ## Every indent is a claim
 
 ```
@@ -779,6 +863,12 @@ iOS
 # Self-check before sending
 
 ```
+more than 3 top-level topics?
+    wrap each in ===start:...=== / ===end:...===
+    blank lines around every marker
+    end with ===response summary===
+        areas only, never findings
+
 read every indent as a sentence FIRST
     "<child> is part of <parent>"
     false or unsupported?
