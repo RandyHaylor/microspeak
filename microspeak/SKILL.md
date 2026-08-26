@@ -1,7 +1,7 @@
 ---
 name: microspeak
 description: |
-  Dense lossless reporting
+  Dense lossless output format
       - Nested fragments, zero filler, zero facts lost
       - Use for status, findings, what broke, what changed
       - Triggers: "microspeak", "condense this", "no prose"
