@@ -150,6 +150,10 @@ A parent may be invented to name a topic
     - Build it from the source's own words
         * Source said "cutover", so use cutover
         * "Not yet migrated" imports a word the source never used
+    - If no source word names the shared state, do NOT invent one
+        * Source: "on the old schema version and nobody has planned the upgrade"
+        * Wrong - "Schema upgrade pending", source never said pending
+        * Right - two base items, no parent invented
 
 Orphan check, after placing every detail
     - Read each base item alone
