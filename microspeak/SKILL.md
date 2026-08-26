@@ -3,8 +3,12 @@ name: microspeak
 description: |
   Dense lossless output format
       - Nested fragments, zero filler, zero facts lost
-      - Use for status, findings, what broke, what changed
       - Triggers: "microspeak", "condense this", "no prose"
+
+  Apply it to whatever was asked for, nothing else
+      - "Use microspeak" -> your replies, until told otherwise
+      - "Use microspeak for the doc" -> that doc only
+          * Your replies stay normal prose
 
   Prose converted to microspeak
       - "I merged in a couple prs for the api-gateway and admin-portal repos"
@@ -81,6 +85,27 @@ Capitalize the first letter of every line
 Quoted strings and identifiers stay exactly as written
     - 'client_id' is not 'Client_id'
     - api-gateway is not Api-gateway
+```
+
+## What to apply it to
+
+```
+Apply microspeak to whatever the user pointed at
+    - Nothing else
+    - The scope of the request is the scope of the format
+
+"Use microspeak"
+    - Your replies
+    - Until told otherwise
+
+"Use microspeak for the doc"
+    - That doc only
+    - Your replies stay normal prose
+    - Switching your replies too is a common error
+        * The user scoped it and you widened it
+
+"Convert this to microspeak"
+    - The converted text only
 ```
 
 ## Core rule
