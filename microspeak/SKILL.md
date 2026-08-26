@@ -1,7 +1,22 @@
 ---
 name: microspeak
 description: |
-  Write status, findings, and summaries as nested indented fragments with zero filler, losing zero information. Use when reporting what you did, what you found, what broke, or what changed - and whenever the user says "microspeak", "condense this", "no prose". Prose: "I merged in a couple prs for the api-gateway and admin-portal repos" becomes "Merged prs" with "- api-gateway" and "- admin-portal" indented under it. Strip filler words. Keep every fact, hedge, quantifier, and quoted string.
+  Dense lossless reporting. Nested fragments, zero filler, zero facts lost.
+  Use for status, findings, what broke, what changed.
+  Triggers: "microspeak", "condense this", "no prose".
+
+  "I merged in a couple prs for the api-gateway and admin-portal repos"
+  becomes:
+  Merged prs
+      - api-gateway
+      - admin-portal
+
+  Base items at column 0, blank line between.
+  Bullets alternate - then * by depth.
+  Capitalize each line. Quoted strings and identifiers verbatim.
+  Over 3 base items: wrap each area in === Header ===, close with === Response summary === listing areas only.
+  KEEP: qualifiers, hedges, negations, attribution, numbers, quoted strings, unfinished work.
+  Long line means two ideas: split to parent + child. Never drop a fact to shorten.
 ---
 
 # MicroSpeak
