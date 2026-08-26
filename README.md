@@ -10,9 +10,9 @@ api-gateway and admin-portal repos
 into this:
 
 ```
-merged prs
-    api-gateway
-    admin-portal
+Merged prs
+    - api-gateway
+    - admin-portal
 ```
 
 Consistently, and without losing important detail.
@@ -44,18 +44,19 @@ Asked for terse bullets:
 Asked to use the microspeak skill:
 
 ```
-S3 retry count 3 -> 5
-    platform team's suggestion
-    may not fix timeouts
-    errors were permission, not load
+Retry count raised 3 -> 5
+    - Platform team's call
+    - Doubt it fixes the timeouts
+    - Failures were permission errors
+        * Not load
 ```
 
 Details lost without microspeak:
 
 ```
-whose call it was
-the doubt it helps
-why it may not
+Whose call it was
+The doubt it helps
+Why it may not
 ```
 
 ---
@@ -102,6 +103,9 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the ag
 - **Attachment by subject, not proximity**
   - prose serialises everything onto one line
   - detail goes under what it is about
+- **A line is read with its ancestors**
+  - base items have none, so each must be clear alone
+  - children may be terse, the parent supplies the subject
 - **Length is not a target**
   - long line = two ideas
     - split to parent + child

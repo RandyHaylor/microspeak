@@ -6,15 +6,17 @@ description: |
       - Use for status, findings, what broke, what changed
       - Triggers: "microspeak", "condense this", "no prose"
 
-  Example
-      - Prose: "I merged in a couple prs for the api-gateway and admin-portal repos"
-      - Microspeak:
+  Prose converted to microspeak
+      - "I merged in a couple prs for the api-gateway and admin-portal repos"
+      - Becomes:
           * Merged prs
               - api-gateway
               - admin-portal
 
-  Format
+  Rules for shaping a response
       - Base items at column 0, blank line between
+          * Each a phrase clear on its own
+          * Children may be terse, parents supply the subject
       - Bullets alternate - then * by depth
       - Capitalize each line
       - Quoted strings and identifiers verbatim
@@ -22,11 +24,9 @@ description: |
           * Wrap each area in === Header ===
           * Close with === Response summary ===, areas only
 
-  Keep
-      - Qualifiers, hedges, negations, attribution
-      - Numbers, quoted strings, unfinished work
-
-  Never shorten by dropping a fact
+  Never lose a detail
+      - Keep qualifiers, hedges, negations, attribution
+      - Keep numbers, quoted strings, unfinished work
       - Long line = two ideas, split to parent + child
 ---
 
@@ -117,6 +117,45 @@ Blank line between base items
 Indent = "belongs to line above"
 No connective words needed
     - Indentation already says "because", "so", "which"
+```
+
+## What each line has to say on its own
+
+```
+A line is read with its ancestors
+    - Parents, grandparents, up to the base item
+    - NOT siblings
+    - NOT neighbouring branches
+
+Base items have no ancestors
+    - So a base item must be clear alone
+    - A phrase, roughly 3-5 words, lenient
+    - "Output" alone says nothing
+    - "Dense lossless output format" does
+
+Children lean on their parents
+    - Terse is correct when the parent supplies the subject
+    - Under "Retry count raised 3 -> 5"
+        * "Platform team's call" is complete
+        * Repeating the subject would be filler
+```
+
+A run of category labels at base level is a smell
+
+```
+Smell - three labels in a row
+    - Format
+        * Base items at column 0
+    - Keep
+        * Qualifiers, hedges
+    - Never
+        * Drop a fact
+
+Those are a list wearing the costume of topics
+    - Rules for shaping a response
+        * Base items at column 0
+        * Keep qualifiers and hedges
+        * Never drop a fact
 ```
 
 ## Subject headers
@@ -942,6 +981,10 @@ iOS
 # Self-check before sending
 
 ```
+Every base item clear on its own?
+    - Read it with nothing else on screen
+    - A bare label means it belongs in a list, not at base level
+
 More than 3 base items?
     - Wrap each area in === Subject Header ===
     - Blank line before and after every header
