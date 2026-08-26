@@ -135,26 +135,20 @@ Name the parent to fit its children
 
 Peers never parent each other
     - Two facts at the same level of detail are siblings
-    - Promoting one to hold the other is a false claim
     - Name the state they share, or make both base items
-    - Source: "US is still on the old index and I have not scheduled the cutover"
-        * Wrong - "US still on old index" holding "Cutover NOT scheduled"
-        * Wrong - "US region", a bare label
-        * Right - "US cutover still pending" holding both
-    - Source: "finished on time but silently skipped 40 rows"
-        * Wrong - "Finished on time" holding "Silently skipped 40 rows"
-            - Success does not contain failure
-        * Right - both as base items under === Nightly export ===
+    - Wrong - "US still on old index" holding "Cutover NOT scheduled"
+    - Wrong - "US region", a bare label
+    - Right - "US cutover still pending" holding both
+    - Wrong - "Finished on time" holding "Silently skipped 40 rows"
+        * Success does not contain failure
 
 A parent may be invented to name a topic
     - It must add no claim of its own
     - Build it from the source's own words
-        * Source said "cutover", so use cutover
-        * "Not yet migrated" imports a word the source never used
-    - If no source word names the shared state, do NOT invent one
-        * Source: "on the old schema version and nobody has planned the upgrade"
-        * Wrong - "Schema upgrade pending", source never said pending
-        * Right - two base items, no parent invented
+        * Source said "cutover", so not "migrated"
+    - No source word for the state? Do not invent one
+        * Source said "planned", so not "pending"
+        * Use two base items instead
 
 Orphan check, after placing every detail
     - Read each base item alone
