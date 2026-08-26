@@ -72,8 +72,7 @@ Base item two
 
 ```
 Every fact survives
-    - Shorter is never the goal
-    - A longer correct answer beats a shorter lossy one
+    - Never cut one to shorten
 
 Base items
     - Column 0, no bullet, blank line between
@@ -119,16 +118,22 @@ Read every indent aloud
     - Unsure -> make it a sibling
 
 A false parent is fabrication
-    - Every line true, document false
-    - No wrong line for proofreading to catch
+    - Run the indent test, proofreading will not catch it
 
 A detail belongs to what it is ABOUT
     - Not what it was mentioned NEAR
-    - Prose order is not a relationship
 
 Name the parent to fit its children
     - "EU rollout" cannot hold "US still on old index"
     - Widen the name, or split into siblings
+
+A parent may be invented to name a topic
+    - It must add no claim of its own
+
+Orphan check, after placing every detail
+    - Read each base item alone
+    - Does it still carry its own open work
+    - Thinner than the source means a detail went elsewhere
 ```
 
 ## Cut only filler
@@ -142,22 +147,67 @@ The structure already states
 Drop
     - I / we / you as subject
         * UNLESS it carries responsibility or attribution
-    - "Basically", "just", "simply", "it turns out that"
+    - "Basically"
+    - "Just"
+    - "Simply"
+    - "It turns out that"
     - Vague counts of things you then list
     - Articles when unambiguous
 
 Never drop
-    - A qualifier - "some", "most", "partially"
-    - A hedge - "probably", "not verified"
-    - Half of a contrast - "his call, not mine"
+    - A qualifier
+        * "some"
+        * "most"
+        * "partially"
+    - A hedge
+        * "probably"
+        * "not verified"
+    - Half of a contrast
+        * "his call, not mine"
     - A fact that only looks redundant
         * "not done" and "still needed" differ
     - Anything unfinished or untouched
 
 A comma-separated list is three ideas
-    - Split it into children
-    - Cramming scans worse
-    - Line count is not a cost
+    - Split it into bulleted children
+```
+
+## Worked example
+
+Prose
+
+```
+I bumped the S3 retry count from 3 to 5 on the platform team's
+suggestion, though I doubt it fixes the timeouts since the failures we
+saw were permission errors rather than load. I did not touch the parquet
+writer, which is still the slowest step.
+```
+
+MicroSpeak
+
+```
+Retry count raised 3 -> 5
+    - Platform team's call, not mine
+    - Doubt it fixes the timeouts
+    - Failures were permission errors
+        * Not load
+
+Parquet writer NOT touched
+    - Still the slowest step
+```
+
+What survives that usually does not
+
+```
+"not mine"
+    - Kept, not collapsed to "platform team's call"
+
+The doubt and its reason
+    - Both, not just the doubt
+
+The untouched item
+    - Its own base item
+    - NOT a child of the retry change
 ```
 
 ## Before sending
