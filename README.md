@@ -120,11 +120,3 @@ microspeak/tests/
     inputs, keys, raw output
 ```
 
-## Compatibility
-
-- **Verified** — Claude Haiku 4.5, Sonnet, Opus, loaded through Claude Code's skill mechanism
-- **Untested elsewhere** — Codex, OpenCode and the rest are expected to work, not measured
-  - the skill is instructions, not tooling
-  - nothing in it is Claude-specific except the frontmatter
-
-Test inputs, scoring keys and raw model output are in `microspeak/tests/`.
