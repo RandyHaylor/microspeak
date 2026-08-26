@@ -135,11 +135,15 @@ Name the parent to fit its children
 Peers never parent each other
     - Two facts at the same level of detail are siblings
     - Promoting one to hold the other is a false claim
-    - Name the state they share, put both under it
+    - Name the state they share, or make both base items
     - Source: "US is still on the old index and I have not scheduled the cutover"
         * Wrong - "US still on old index" holding "Cutover NOT scheduled"
         * Wrong - "US region", a bare label
         * Right - "US cutover still pending" holding both
+    - Source: "finished on time but silently skipped 40 rows"
+        * Wrong - "Finished on time" holding "Silently skipped 40 rows"
+            - Success does not contain failure
+        * Right - both as base items under === Nightly export ===
 
 A parent may be invented to name a topic
     - It must add no claim of its own
