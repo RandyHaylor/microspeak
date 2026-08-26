@@ -46,7 +46,11 @@ description: |
           * Split to parent + child
 ---
 
-# MicroSpeak
+MicroSpeak AI agent skill
+    - Guides efficient output
+    - Prevents loss of
+        * Nuance
+        * Detail
 
 ## Format
 
