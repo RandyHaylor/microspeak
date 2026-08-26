@@ -2,12 +2,13 @@
 name: microspeak
 description: |
   Dense lossless output format
-      - Nested fragments, zero filler, zero facts lost
-      - Triggers: "microspeak", "condense this", "no prose"
+      - Nested fragments
+      - Zero filler
+      - Zero facts lost
 
-  Apply it to whatever was asked for, nothing else
-      - "Use microspeak" -> your replies, until told otherwise
-      - "Use microspeak for the doc" -> that doc only
+  Trigger: Apply it to whatever was asked for, nothing else
+      - "Use microspeak"/"brief bullets"/etc. -> your replies, until told otherwise
+      - "Use microspeak for X" -> that X only (may be a specific reply, a doc, or other)
           * Your replies stay normal prose
 
   Prose converted to microspeak
@@ -18,20 +19,30 @@ description: |
               - admin-portal
 
   Rules for shaping a response
-      - Base items at column 0, blank line between
+      - Base items at column 0
+          * Blank line between
           * Each a phrase clear on its own
-          * Children may be terse, parents supply the subject
+          * Children may be terse
+              - Parents supply the subject
       - Bullets alternate - then * by depth
       - Capitalize each line
       - Quoted strings and identifiers verbatim
       - Over 3 base items
           * Wrap each area in === Header ===
-          * Close with === Response summary ===, areas only
+          * Close with === Response summary ===
+              - Areas only
 
   Never lose a detail
-      - Keep qualifiers, hedges, negations, attribution
-      - Keep numbers, quoted strings, unfinished work
-      - Long line = two ideas, split to parent + child
+      - Keep
+          * Qualifiers
+          * Hedges
+          * Negations
+          * Attribution
+          * Numbers
+          * Quoted strings
+          * Unfinished work
+      - Long line = two ideas
+          * Split to parent + child
 ---
 
 # MicroSpeak
@@ -141,20 +152,24 @@ Shorter is NOT the goal
 Blank line between base items
 Indent = "belongs to line above"
 No connective words needed
-    - Indentation already says "because", "so", "which"
+    - Indentation already says
+        * "because"
+        * "so"
+        * "which"
 ```
 
 ## What each line has to say on its own
 
 ```
 A line is read with its ancestors
-    - Parents, grandparents, up to the base item
+    - The chain of parents up to the base item
     - NOT siblings
     - NOT neighbouring branches
 
 Base items have no ancestors
     - So a base item must be clear alone
-    - A phrase, roughly 3-5 words, lenient
+    - A phrase of roughly 3-5 words
+        * Lenient
     - "Output" alone says nothing
     - "Dense lossless output format" does
 
@@ -458,6 +473,14 @@ Constraint
 ## Line length
 
 ```
+A comma-separated list is the smell
+    - Three items on one line is three ideas
+    - Split them into children
+    - This is the most common way the rule gets broken
+    - Cramming feels tighter to the writer
+        * It scans worse for the reader
+        * Line count is not a cost
+
 One idea per line
     - A line holding two ideas reads badly
     - Fix by SPLITTING, never by cutting facts
@@ -472,8 +495,13 @@ Lines often land at 3-5 words
         * Do not cut it to reach 5
 
 Never shorten a line by dropping
-    - A qualifier - "most", "some", "partially"
-    - A hedge - "probably", "not verified"
+    - A qualifier
+        * "most"
+        * "some"
+        * "partially"
+    - A hedge
+        * "probably"
+        * "not verified"
     - A fact that merely looks redundant
     - Quoted strings - verbatim, never trimmed
     - Identifiers - verbatim
@@ -558,7 +586,10 @@ I / we / you as subject
             - AND the fact is finished work
 "I went ahead and"
 "It turns out that"
-"Basically", "essentially", "just", "simply"
+"Basically"
+"Essentially"
+"Just"
+"Simply"
 "In order to" -> "to"
 "Was able to" -> did
 "There is/are", "it is"
@@ -578,8 +609,12 @@ Scope qualifiers
         * Wrong: "errors"
     - The incompleteness IS the information
 Hedges
-    - "probably", "appears", "not verified"
-Negations, exceptions, conditions
+    - "probably"
+    - "appears"
+    - "not verified"
+Negations
+Exceptions
+Conditions
     - A "not X" clause is a fact, not decoration
     - "Ravi's call, not mine" is TWO facts
         * Who decided
@@ -592,7 +627,11 @@ Attribution
             - Ravi's call
             - Explicitly not the speaker's
     - A parenthetical demotes a fact to an aside
-Numbers, versions, paths, names, flags
+Numbers
+Versions
+Paths
+Names
+Flags
 Quoted user-facing strings, verbatim
 Causality when non-obvious
     - Express by nesting, not by "because"
@@ -1036,6 +1075,7 @@ Scan every line
         * Delete
     - First letter capitalized?
         * Except quoted strings and identifiers
-    - Bullets alternate dash, asterisk, dash?
-        * By depth
+    - Bullets alternate by depth?
+    - Any line holding a comma-separated list?
+        * Split it into children
 ```
