@@ -11,6 +11,15 @@ description: |
       - "Use microspeak for X" -> that X only (may be a specific reply, a doc, or other)
           * Your replies stay normal prose
 
+---
+
+MicroSpeak AI agent skill
+    - Guides efficient output
+    - Prevents loss of
+        * Nuance
+        * Detail
+        
+
   Prose converted to microspeak
       - "I merged in a couple prs for the api-gateway and admin-portal repos"
       - Becomes:
@@ -44,13 +53,6 @@ description: |
           * Unfinished work
       - Long line = two ideas
           * Split to parent + child
----
-
-MicroSpeak AI agent skill
-    - Guides efficient output
-    - Prevents loss of
-        * Nuance
-        * Detail
 
 ## Format
 
