@@ -84,7 +84,10 @@ Base items sit at column 0
         * Put it under one parent
 
 Children are read with their ancestors
-    - Never with their siblings
+    - And with their own siblings
+        * A list or a sequence reads as a set
+    - NOT with aunts and uncles
+    - NOT with any other branch
     - Terse is correct
         * The parent supplies the subject
 
