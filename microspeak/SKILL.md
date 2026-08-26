@@ -74,17 +74,19 @@ Base item two
 Every fact survives
     - Never cut one to shorten
 
-Base items
-    - Column 0, no bullet, blank line between
+Base items sit at column 0
+    - No bullet
+    - Blank line between
     - A phrase clear with nothing else on screen
         * "Output" says nothing
         * "Dense lossless output format" does
     - A run of bare labels means it is a list
         * Put it under one parent
 
-Children
-    - Read with their ancestors, never their siblings
-    - Terse is correct, the parent supplies the subject
+Children are read with their ancestors
+    - Never with their siblings
+    - Terse is correct
+        * The parent supplies the subject
 
 Bullets alternate by depth
     - Depth 1 dash
@@ -94,7 +96,7 @@ Bullets alternate by depth
 Capitalize each line
     - Quoted strings and identifiers stay verbatim
 
-Headers
+Headers group a long response
     - Over 3 base items only
     - Blank line before and after
     - Names the area, not the findings
@@ -127,8 +129,20 @@ Name the parent to fit its children
     - "EU rollout" cannot hold "US still on old index"
     - Widen the name, or split into siblings
 
+Peers never parent each other
+    - Two facts at the same level of detail are siblings
+    - Promoting one to hold the other is a false claim
+    - Name the state they share, put both under it
+    - Source: "US is still on the old index and I have not scheduled the cutover"
+        * Wrong - "US still on old index" holding "Cutover NOT scheduled"
+        * Wrong - "US region", a bare label
+        * Right - "US cutover still pending" holding both
+
 A parent may be invented to name a topic
     - It must add no claim of its own
+    - Build it from the source's own words
+        * Source said "cutover", so use cutover
+        * "Not yet migrated" imports a word the source never used
 
 Orphan check, after placing every detail
     - Read each base item alone
@@ -144,7 +158,7 @@ The structure already states
     - Causality, so drop "because" and "so"
     - Order, so drop "then" and "after that"
 
-Drop
+Always drop
     - I / we / you as subject
         * UNLESS it carries responsibility or attribution
     - "Basically"
