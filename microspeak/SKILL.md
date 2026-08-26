@@ -1,22 +1,33 @@
 ---
 name: microspeak
 description: |
-  Dense lossless reporting. Nested fragments, zero filler, zero facts lost.
-  Use for status, findings, what broke, what changed.
-  Triggers: "microspeak", "condense this", "no prose".
+  Dense lossless reporting
+      - Nested fragments, zero filler, zero facts lost
+      - Use for status, findings, what broke, what changed
+      - Triggers: "microspeak", "condense this", "no prose"
 
-  "I merged in a couple prs for the api-gateway and admin-portal repos"
-  becomes:
-  Merged prs
-      - api-gateway
-      - admin-portal
+  Example
+      - Prose: "I merged in a couple prs for the api-gateway and admin-portal repos"
+      - Microspeak:
+          * Merged prs
+              - api-gateway
+              - admin-portal
 
-  Base items at column 0, blank line between.
-  Bullets alternate - then * by depth.
-  Capitalize each line. Quoted strings and identifiers verbatim.
-  Over 3 base items: wrap each area in === Header ===, close with === Response summary === listing areas only.
-  KEEP: qualifiers, hedges, negations, attribution, numbers, quoted strings, unfinished work.
-  Long line means two ideas: split to parent + child. Never drop a fact to shorten.
+  Format
+      - Base items at column 0, blank line between
+      - Bullets alternate - then * by depth
+      - Capitalize each line
+      - Quoted strings and identifiers verbatim
+      - Over 3 base items
+          * Wrap each area in === Header ===
+          * Close with === Response summary ===, areas only
+
+  Keep
+      - Qualifiers, hedges, negations, attribution
+      - Numbers, quoted strings, unfinished work
+
+  Never shorten by dropping a fact
+      - Long line = two ideas, split to parent + child
 ---
 
 # MicroSpeak
