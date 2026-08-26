@@ -14,7 +14,7 @@ description: |
   Prose converted to microspeak
       - "I merged in a couple prs for the api-gateway and admin-portal repos"
       - Becomes:
-          * Merged prs
+          * I merged prs
               - api-gateway
               - admin-portal
 
@@ -37,6 +37,7 @@ description: |
           * Qualifiers
           * Hedges
           * Negations
+          * Who did it, including I / we / you
           * Attribution
           * Numbers
           * Quoted strings
@@ -170,8 +171,6 @@ The structure already states
     - Order, so drop "then" and "after that"
 
 Always drop
-    - I / we / you as subject
-        * UNLESS it carries responsibility or attribution
     - "Basically"
     - "Just"
     - "Simply"
@@ -180,6 +179,9 @@ Always drop
     - Articles when unambiguous
 
 Never drop
+    - Who did it
+        * Including I / we / you
+        * "I rewrote it" -> "I rewrote it", not "it was rewritten"
     - A qualifier
         * "some"
         * "most"
@@ -211,13 +213,13 @@ writer, which is still the slowest step.
 MicroSpeak
 
 ```
-Retry count raised 3 -> 5
+I raised the S3 retry count 3 -> 5
     - Platform team's call, not mine
-    - Doubt it fixes the timeouts
+    - I doubt it fixes the timeouts
     - Failures were permission errors
         * Not load
 
-Parquet writer NOT touched
+I did NOT touch the parquet writer
     - Still the slowest step
 ```
 

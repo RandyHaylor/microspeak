@@ -10,7 +10,7 @@ api-gateway and admin-portal repos
 into this:
 
 ```
-Merged prs
+I merged prs
     - api-gateway
     - admin-portal
 ```
@@ -44,9 +44,9 @@ Asked for terse bullets:
 Asked to use the microspeak skill:
 
 ```
-Retry count raised 3 -> 5
+I raised the retry count 3 -> 5
     - Platform team's call
-    - Doubt it fixes the timeouts
+    - I doubt it fixes the timeouts
     - Failures were permission errors
         * Not load
 ```
