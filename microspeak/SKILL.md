@@ -7,6 +7,7 @@ description: |
       - Zero facts lost
       - Bullets and headers: the destination's standard syntax
       - Generous blank lines, like a textbook
+      - Long replies open with a 1-2 sentence plain lead
 
   Trigger: Apply it to whatever was asked for, nothing else
       - "Use microspeak"/"brief bullets"/etc. -> your replies, until told otherwise
@@ -15,14 +16,15 @@ description: |
 
 ---
 
-Bullet syntax in this file is illustrative
+Bullet and header syntax in this file is illustrative
 	- NOT a required format
-	- Use the standard list syntax of wherever the output goes
+	- Use the standard syntax of wherever the output goes
 		- Rendered markdown -> markdown lists and headings
 		- Slack, email, code comments -> their own conventions
 	- Nothing specified -> the plain default below
 		- Base item at column 0
 		- Tab + "-" per depth
+		- Header underlined with dashes
 
 
 MicroSpeak AI agent skill
@@ -51,9 +53,9 @@ Rules for shaping a response
 	- Capitalize each line
 	- Quoted strings and identifiers verbatim
 	- Over 3 base items
+		- Open with a lead
+			- 1-2 plain sentences, the bottom line
 		- Group areas under headers
-		- Close with a "Response summary" header
-			- Areas only
 
 
 Never lose a detail
@@ -75,7 +77,11 @@ Never lose a detail
 Plain default, when the destination sets no syntax
 
 ```
-=== Subject Header ===
+Lead sentence with the bottom line, in plain prose.
+
+
+Subject Header
+--------------
 
 Base item one
 	- Phrase here
@@ -88,14 +94,19 @@ Base item two
 	- Detail
 
 
-=== Response summary ===
+Second Subject
+--------------
 
-- Subject Header
+Base item three
+	- Detail
 ```
 
 Same shape in rendered markdown
 
 ```markdown
+Lead sentence with the bottom line, in plain prose.
+
+
 ## Subject Header
 
 Base item one
@@ -109,9 +120,10 @@ Base item two
 - Detail
 
 
-## Response summary
+## Second Subject
 
-- Subject Header
+Base item three
+- Detail
 ```
 
 ## Rules
@@ -146,6 +158,9 @@ Whitespace makes it scannable
 	- Blank line between base items
 	- Blank line after a header
 	- Two blank lines before the next header
+	- Blank line between child groups
+		- When each child carries its own details
+		- Leaf-only children stay together
 	- Never pack sections edge to edge
 
 Capitalize each line
@@ -154,12 +169,28 @@ Capitalize each line
 Headers group a long response
 	- Over 3 base items only
 	- The destination's heading syntax
-		- Markdown -> ##
-		- Plain text -> === Header ===
+		- Markdown -> # or ##
+		- Plain text -> header line, dashes underneath
+			- Another plain style is fine
+			- Must look different from a base item
 	- Names the area, not the findings
 	- Adds no indent level
-	- Close with a "Response summary" header
-		- Areas only, never findings
+
+A long response opens with a lead
+	- Same trigger as headers
+	- 1-2 sentences of plain prose
+	- The bottom line
+		- Overall state
+		- Biggest risk
+		- Anything the reader must act on
+	- Friendly through plain wording, not pleasantries
+		- "Mostly on track" is warm and still a fact
+		- "Great week!" is filler
+	- Qualifiers match the details below
+		- Details say "some" -> lead says "some"
+	- No fact that is absent below
+	- Leaving areas out is fine
+		- Softening or contradicting them is not
 ```
 
 ## Nesting is a claim
@@ -303,7 +334,13 @@ still describes the old queue.
 MicroSpeak, plain default
 
 ```
-=== Payments ===
+Release is mostly on track - payments looks good in staging but has
+unexplained timeouts, and iOS is blocked until Marco renews the signing
+certificate.
+
+
+Payments
+--------
 
 Queue migration done in staging
 	- I ran the load test twice
@@ -316,7 +353,8 @@ Production cutover scheduled Thursday
 	- Pending Dana's sign-off
 
 
-=== Mobile ===
+Mobile
+------
 
 iOS build blocked
 	- Signing certificate expired
@@ -326,20 +364,14 @@ iOS build blocked
 Android fine
 
 
-=== Docs ===
+Docs
+----
 
 I updated the API reference
 	- Two new endpoints
 
 Migration guide NOT updated
 	- Still describes the old queue
-
-
-=== Response summary ===
-
-- Payments
-- Mobile
-- Docs
 ```
 
 One section of it in rendered markdown
@@ -353,6 +385,26 @@ iOS build blocked
   - I have not heard back
 
 Android fine
+```
+
+The lead, done wrong
+
+```
+Great week! Payments migration is done and we're set for Thursday's cutover.
+```
+
+Why it fails
+
+```
+"Great week!"
+	- Filler, and cheer the facts do not support
+
+"Migration is done"
+	- Drops "in staging"
+
+"Set for Thursday"
+	- Drops "pending Dana's sign-off"
+	- Drops the unexplained timeouts
 ```
 
 What survives that usually does not
@@ -371,6 +423,82 @@ The migration guide
 	- Untouched work gets its own base item
 ```
 
+## Worked example, spacing
+
+Packed - child groups run together
+
+```
+Removed
+	- Legacy XML export
+		- No usage in 6 months of logs
+		- Sales confirmed no contracts need it
+	- `--fast` CLI flag
+		- Did nothing since 1.4
+		- Kept as a no-op alias for one release
+```
+
+Spaced - full reply, every level of spacing
+
+```
+Most of the 2.0 cleanup is done - three things removed, but the config
+migration script is still untested on Windows.
+
+
+Removed
+-------
+
+Three features gone in 2.0
+	- Legacy XML export
+		- No usage in 6 months of logs
+		- Sales confirmed no contracts need it
+
+	- `--fast` CLI flag
+		- Did nothing since 1.4
+		- Kept as a no-op alias for one release
+
+	- Python 3.8 support
+		- End of life
+		- CI matrix no longer runs it
+
+Changelog updated
+	- Lists all three removals
+
+
+Added
+-----
+
+Config migration script
+	- Converts 1.x YAML to 2.0 TOML
+	- Tested on Linux and macOS
+		- NOT tested on Windows
+
+New `doctor` command
+	- Checks config version
+	- Checks Python version
+```
+
+Where the blank lines go
+
+```
+After the lead
+	- Two
+
+After a header
+	- One
+
+Between base items
+	- One
+
+Between child groups with their own details
+	- One
+
+Leaf-only children
+	- None, they stay together
+
+Before the next header
+	- Two
+```
+
 ## Before sending
 
 ```
@@ -379,7 +507,9 @@ Every indent true?
 Every fact from the source present?
 Every hedge and qualifier intact?
 Any comma-run left to split?
-Bullets in the destination's syntax?
-Blank lines between items and sections?
-No preamble, no sign-off?
+Bullets and headers in the destination's syntax?
+Headers distinct from base items?
+Blank lines between items, groups and sections?
+Long response opens with a lead that matches its details?
+No preamble beyond the lead, no sign-off?
 ```
