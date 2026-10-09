@@ -18,7 +18,8 @@ description: |
 
 Bullet and header syntax in this file is illustrative
 	- Only the markers and heading style vary
-		- Indentation, nesting and spacing are required
+		- Nesting and spacing are required
+		- Markdown shows nesting with its own list indentation
 	- Use the standard syntax of wherever the output goes
 		- Rendered markdown -> markdown lists and headings
 		- Slack, email, code comments -> their own conventions
@@ -191,6 +192,7 @@ Headers group a long response
 A long response opens with a lead
 	- Same trigger as headers
 	- 1-2 sentences of plain prose
+		- Never more
 	- The bottom line, as facts from the details
 		- What changed
 		- Biggest risk or blocker
@@ -203,6 +205,9 @@ A long response opens with a lead
 	- Qualifiers match the details below
 		- Details say "some" -> lead says "some"
 	- No fact that is absent below
+	- No link between facts the source does not make
+		- Review is Tuesday + threat model NOT sent
+		- NOT "threat model needed before Tuesday"
 	- Leaving areas out is fine
 		- Softening or contradicting them is not
 ```
@@ -217,7 +222,7 @@ An indent asserts the child is
 	- Or evidence for it
 
 Read every indent aloud
-	- "<child> is part of / a cause of / a detail of / evidence for <parent>"
+	- "<child> is part of / a cause of / caused by / a detail of / evidence for <parent>"
 	- One must be true
 		- "Signing certificate expired" is a cause of "iOS build blocked"
 	- None true or unsupported -> re-parent it
@@ -273,7 +278,10 @@ Always drop
 		- "Just" meaning only or recently is a fact, keep it
 	- "Simply"
 	- "It turns out that"
-	- Vague counts of things you then list
+	- Vague counts of a complete list
+		- "a couple prs: X, Y" -> list X, Y
+		- Partial list -> "some" is a qualifier, keep it
+			- "Fixed some of the errors" stays "some"
 	- Articles, only when nothing is lost
 		- "The old queue" keeps "the" - it means the previous one
 
@@ -376,14 +384,15 @@ still describes the old queue.
 MicroSpeak, plain default
 
 ```
-Payments migration is done in staging but had 3 timeouts I have not
-explained, and iOS is blocked on an expired signing certificate.
+Payments migration is done in staging, but the second load test run had
+3 timeouts I have not explained. iOS is blocked on an expired signing
+certificate.
 
 
 Payments
 --------
 
-Queue migration done in staging
+Migration to the new queue done in staging
 	- I ran the load test twice
 		- p95 latency 420ms -> 180ms
 
@@ -460,7 +469,8 @@ What survives that usually does not
 	- Thursday is conditional
 
 "I haven't heard back"
-	- Renewal promised, NOT confirmed
+	- Marco said he would renew it
+	- NOT confirmed done
 
 The migration guide
 	- Untouched work gets its own base item
@@ -487,7 +497,7 @@ Three features gone in 2.0
 Spaced - full reply, every level of spacing
 
 ```
-Three features are removed for 2.0, and the new config migration script
+Three features are removed for 2.0, and the config migration script
 is NOT tested on Windows.
 
 
@@ -517,7 +527,7 @@ Added
 Config migration script
 	- Converts 1.x YAML to 2.0 TOML
 	- Tested on Linux and macOS
-		- NOT tested on Windows
+	- NOT tested on Windows
 
 New `doctor` command
 	- Checks config version
