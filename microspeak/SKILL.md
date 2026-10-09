@@ -289,6 +289,10 @@ Never drop
 	- Who did it
 		- Including I / we / you
 		- "I rewrote it" -> "I rewrote it", not "it was rewritten"
+		- Wrong - "Search index rebuilt"
+		- Right - "We rebuilt the search index"
+		- Wrong - "Deployed 3 of 5 services"
+		- Right - "Ana deployed 3 of 5 services"
 		- Negatives say whose, explicitly
 			- "I did NOT touch the parquet writer"
 				- Only I am known not to have touched it
@@ -563,10 +567,12 @@ Every base item clear alone?
 Every indent true?
 Every fact from the source present?
 Every hedge and qualifier intact?
+Every action keeps who did it, positive and negative?
 Any comma-run left to split?
 Bullets and headers in the destination's syntax?
 Headers distinct from base items?
 Blank lines between items, groups and sections?
 Long response opens with a lead that matches its details?
+Lead is 1-2 sentences, not 3?
 No preamble beyond the lead, no sign-off?
 ```
