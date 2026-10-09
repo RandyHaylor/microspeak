@@ -17,7 +17,8 @@ description: |
 ---
 
 Bullet and header syntax in this file is illustrative
-	- NOT a required format
+	- Only the markers and heading style vary
+		- Indentation, nesting and spacing are required
 	- Use the standard syntax of wherever the output goes
 		- Rendered markdown -> markdown lists and headings
 		- Slack, email, code comments -> their own conventions
@@ -51,6 +52,7 @@ In short - full rules under ## Rules
 		- Blank line between base items
 		- Two blank lines before each header
 	- Capitalize each line
+		- Except names that start lowercase - iOS, p95
 	- Quoted strings and identifiers verbatim
 	- Over 3 base items
 		- Open with a lead
@@ -70,6 +72,8 @@ Never lose a detail
 		- Unfinished work
 	- Long line = two ideas
 		- Split to parent + child
+		- Parent is the idea they share
+			- Never one peer holding another
 		- Aim for 3-5 words a line
 			- Longer only when it will not split
 
@@ -167,6 +171,12 @@ Whitespace makes it scannable
 
 Capitalize each line
 	- Quoted strings and identifiers stay verbatim
+	- Names that start lowercase stay lowercase
+		- iOS, p95, `--fast`
+
+NOT in caps when the negation is the point of the line
+	- "I did NOT update the migration guide"
+	- "Cutover NOT scheduled"
 
 Headers group a long response
 	- Over 3 base items only
@@ -264,15 +274,21 @@ Always drop
 	- "Simply"
 	- "It turns out that"
 	- Vague counts of things you then list
-	- Articles when unambiguous
+	- Articles, only when nothing is lost
+		- "The old queue" keeps "the" - it means the previous one
 
 Never drop
 	- Who did it
 		- Including I / we / you
 		- "I rewrote it" -> "I rewrote it", not "it was rewritten"
-		- Except a negative that already covers everyone
-			- "Parquet writer NOT touched" -> nobody touched it, me included
-			- "I did NOT touch it" claims less
+		- Negatives say whose, explicitly
+			- "I did NOT touch the parquet writer"
+				- Only I am known not to have touched it
+			- "No one touched the parquet writer"
+				- Everyone, verified unchanged
+				- Only when the source says so
+			- Bare "NOT touched" means NO ONE touched it
+				- Never shorthand for "I did not"
 	- A qualifier
 		- "some"
 		- "most"
@@ -289,6 +305,7 @@ Never drop
 
 A comma-separated list is several ideas
 	- Split it into bulleted children
+	- Under a parent naming what they share
 	- Except a contrast
 		- "Suggested by platform, not required" stays one line
 ```
@@ -310,10 +327,9 @@ MicroSpeak
 I bumped the S3 retry count 3 -> 5
 	- Platform team's suggestion
 	- I doubt it fixes the timeouts
-		- Failures we saw were permission errors
-			- Not load
+		- Failures we saw were permission errors, not load
 
-Parquet writer NOT touched
+I did NOT touch the parquet writer
 	- Still the slowest step
 ```
 
@@ -333,6 +349,11 @@ The doubt and its reason
 The untouched item
 	- Its own base item
 	- NOT a child of the retry change
+	- Keeps "I" - the source only says I did not touch it
+		- "Parquet writer NOT touched" would claim no one did
+
+The contrast
+	- "permission errors, not load" stays one line
 ```
 
 ## Worked example, long response
@@ -346,7 +367,8 @@ dropped from 420ms to 180ms, but the second run had three timeouts I
 haven't explained yet. Production cutover is scheduled for Thursday
 pending Dana's sign-off. On the mobile side, the iOS build is blocked on
 the expired signing certificate. Marco said he'd renew it today but I
-haven't heard back. Android is fine. For docs, I updated the API
+haven't heard back. Android is fine; nobody has touched that build since
+the last release. For docs, I updated the API
 reference for the two new endpoints but not the migration guide, which
 still describes the old queue.
 ```
@@ -354,8 +376,8 @@ still describes the old queue.
 MicroSpeak, plain default
 
 ```
-Payments migration works in staging but had 3 unexplained timeouts, and
-iOS is blocked until Marco renews the signing certificate.
+Payments migration is done in staging but had 3 timeouts I have not
+explained, and iOS is blocked on an expired signing certificate.
 
 
 Payments
@@ -363,7 +385,7 @@ Payments
 
 Queue migration done in staging
 	- I ran the load test twice
-	- p95 latency 420ms -> 180ms
+		- p95 latency 420ms -> 180ms
 
 Second load test run had 3 timeouts
 	- I have NOT explained them yet
@@ -378,9 +400,10 @@ Mobile
 iOS build blocked
 	- Signing certificate expired
 	- Marco said he'd renew it today
-		- I have not heard back
+		- I have NOT heard back
 
 Android fine
+	- No one has touched that build since the last release
 
 
 Docs
@@ -389,7 +412,7 @@ Docs
 I updated the API reference
 	- Two new endpoints
 
-Migration guide NOT updated
+I did NOT update the migration guide
 	- Still describes the old queue
 ```
 
@@ -401,9 +424,10 @@ One section of it in rendered markdown
 iOS build blocked
 - Signing certificate expired
 - Marco said he'd renew it today
-  - I have not heard back
+  - I have NOT heard back
 
 Android fine
+- No one has touched that build since the last release
 ```
 
 The lead, done wrong
@@ -440,6 +464,10 @@ What survives that usually does not
 
 The migration guide
 	- Untouched work gets its own base item
+	- "I did NOT update" - only the speaker is known
+
+The Android build
+	- "No one has touched" - the source says nobody
 ```
 
 ## Worked example, spacing
@@ -460,7 +488,7 @@ Spaced - full reply, every level of spacing
 
 ```
 Three features are removed for 2.0, and the new config migration script
-is NOT tested on Windows yet.
+is NOT tested on Windows.
 
 
 Removed

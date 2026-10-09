@@ -47,8 +47,7 @@ Asked to use the microspeak skill:
 I bumped the S3 retry count 3 -> 5
 	- Platform team's suggestion
 	- I doubt it fixes the timeouts
-		- Failures we saw were permission errors
-			- Not load
+		- Failures we saw were permission errors, not load
 ```
 
 Details lost without microspeak:
