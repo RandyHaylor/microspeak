@@ -11,8 +11,8 @@ into this:
 
 ```
 I merged prs
-    - api-gateway
-    - admin-portal
+	- api-gateway
+	- admin-portal
 ```
 
 Consistently, and without losing important detail.
@@ -45,10 +45,10 @@ Asked to use the microspeak skill:
 
 ```
 I raised the retry count 3 -> 5
-    - Platform team's call
-    - I doubt it fixes the timeouts
-    - Failures were permission errors
-        * Not load
+	- Platform team's call
+	- I doubt it fixes the timeouts
+	- Failures were permission errors
+		- Not load
 ```
 
 Details lost without microspeak:
@@ -106,6 +106,10 @@ Say **"the microspeak skill"**, not just "microspeak" — naming it makes the ag
 - **A line is read with its ancestors**
   - base items have none, so each must be clear alone
   - children may be terse, the parent supplies the subject
+- **Readable by humans**
+  - bullets and headings in the destination's own syntax
+    - markdown, Slack, code comments, plain text
+  - blank lines between items, more between sections
 - **Length is not a target**
   - long line = two ideas
     - split to parent + child
