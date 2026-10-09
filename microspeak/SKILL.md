@@ -5,9 +5,10 @@ description: |
       - Nested fragments
       - Zero filler
       - Zero facts lost
+      - Higher levels tell the story, with outcomes, not bare topics
       - Bullets and headers: the destination's standard syntax
       - Generous blank lines, like a textbook
-      - Over 3 base items: open with a 1-2 sentence plain lead
+      - Over 3 base items: open with a 1-2 sentence elevator lead
 
   Trigger: Apply it to whatever was asked for, nothing else
       - "Use microspeak"/"brief bullets"/etc. -> your replies, until told otherwise
@@ -45,6 +46,9 @@ Prose converted to microspeak
 
 
 In short - full rules under ## Rules
+	- Higher levels tell the story
+		- Headers and base items state outcomes
+		- Children hold evidence and specifics
 	- Base items at column 0
 		- Each a phrase clear on its own
 		- Children may be terse
@@ -56,8 +60,8 @@ In short - full rules under ## Rules
 		- Except names that start lowercase - iOS, p95
 	- Quoted strings and identifiers verbatim
 	- Over 3 base items
-		- Open with a lead
-			- 1-2 plain sentences, facts only
+		- Open with an elevator lead
+			- 1-2 spoken sentences, the bottom line
 		- Group areas under headers
 
 
@@ -84,52 +88,52 @@ Never lose a detail
 Plain default, when the destination sets no syntax
 
 ```
-Lead sentence with the bottom line, in plain prose, facts only.
+Elevator lead - the bottom line in one or two spoken sentences.
 
 
-Subject Header
---------------
+Area - its outcome
+------------------
 
-Base item one
-	- Phrase here
-	- Another update
-		- Its detail
-		- Another detail
+Base item stating a result
+	- Supporting detail
+	- Another detail
+		- Its specifics
+		- More specifics
 			- Deeper still
 
-Base item two
+Another result
 	- Detail
 
 
-Second Subject
---------------
+Second area - its outcome
+-------------------------
 
-Base item three
+Base item stating a result
 	- Detail
 ```
 
 Same shape in rendered markdown
 
 ```markdown
-Lead sentence with the bottom line, in plain prose, facts only.
+Elevator lead - the bottom line in one or two spoken sentences.
 
 
-## Subject Header
+## Area - its outcome
 
-Base item one
-- Phrase here
-- Another update
-  - Its detail
-  - Another detail
+Base item stating a result
+- Supporting detail
+- Another detail
+  - Its specifics
+  - More specifics
     - Deeper still
 
-Base item two
+Another result
 - Detail
 
 
-## Second Subject
+## Second area - its outcome
 
-Base item three
+Base item stating a result
 - Detail
 ```
 
@@ -138,6 +142,23 @@ Base item three
 ```
 Every fact survives
 	- Never cut one to shorten
+
+Higher levels tell the story
+	- Read only the headers -> the overview
+	- Headers + base items -> the whole story
+	- Children -> evidence and specifics
+	- So every level states its outcome, not just its topic
+		- Wrong - "Module testing", with "passed" three levels down
+		- Right - "High-level module testing (passed)"
+		- Wrong - "Config migration script", with "NOT tested on Windows" below
+		- Right - "Config migration script added, NOT tested on Windows"
+	- An outcome must cover all its children
+		- Mixed results -> say mixed
+			- "Testing - Linux and macOS pass, Windows NOT tested"
+		- Summarize the children, add nothing beyond them
+	- Siblings carry the same level of detail
+		- A result next to a result
+		- NOT a result next to one of its own specifics
 
 Base items sit at column 0
 	- No bullet
@@ -186,22 +207,29 @@ Headers group a long response
 		- Plain text -> header line, dashes underneath
 			- Another plain style is fine
 			- Must look different from a base item
-	- Names the area, not the findings
+	- Area plus its outcome
+		- "Mobile - iOS blocked, Android fine"
+		- NOT "Mobile"
 	- Adds no indent level
 
-A long response opens with a lead
+A long response opens with an elevator lead
 	- Same trigger as headers
-	- 1-2 sentences of plain prose
-		- Never more
-	- The bottom line, as facts from the details
-		- What changed
+	- You have the CEO's ear for 10 seconds
+	- 1-2 sentences, spoken and plain
+		- "Landed", "slipped", "still chasing" - spoken, still exact
+	- The bottom line
+		- What happened
 		- Biggest risk or blocker
 		- Anything the reader must act on
-	- No verdict the source does not make
-		- "Mostly on track" is your judgment, not a fact
-		- Source says it -> keep it
-	- Friendly through plain wording, not pleasantries
+	- Verdicts
+		- Reporting your own work -> your judgment is allowed, marked as yours
+			- "My read is it's solid"
+		- Condensing someone else's text -> only verdicts the source makes
+			- "Mostly on track" is your judgment, not their fact
+	- Warm wording, no pleasantries
 		- "Great week!" is filler
+	- No minimizing
+		- "just", "small", "minor" only when the source says so
 	- Qualifiers match the details below
 		- Details say "some" -> lead says "some"
 	- No fact that is absent below
@@ -249,7 +277,8 @@ Peers never parent each other
 		- Success does not contain failure
 
 A parent may be invented to name a topic
-	- It must add no claim of its own
+	- It may summarize its children
+	- It must add no claim beyond them
 	- Build it from the source's own words
 		- Source said "cutover", so not "migrated"
 	- No source word for the state? Do not invent one
@@ -380,21 +409,22 @@ haven't explained yet. Production cutover is scheduled for Thursday
 pending Dana's sign-off. On the mobile side, the iOS build is blocked on
 the expired signing certificate. Marco said he'd renew it today but I
 haven't heard back. Android is fine; nobody has touched that build since
-the last release. For docs, I updated the API
-reference for the two new endpoints but not the migration guide, which
-still describes the old queue.
+the last release. For docs, I updated the API reference for the two new
+endpoints but not the migration guide, which still describes the old
+queue.
 ```
 
 MicroSpeak, plain default
 
 ```
-Payments migration is done in staging, but the second load test run had
-3 timeouts I have not explained. iOS is blocked on an expired signing
-certificate.
+Payments is done in staging and the load test cut p95 latency from 420ms
+to 180ms, but the second run had 3 timeouts I can't explain yet. iOS is
+stuck on an expired signing certificate - Marco said he'd renew it today,
+but I haven't heard back.
 
 
-Payments
---------
+Payments - done in staging, 3 timeouts unexplained
+--------------------------------------------------
 
 Migration to the new queue done in staging
 	- I ran the load test twice
@@ -407,8 +437,8 @@ Production cutover scheduled Thursday
 	- Pending Dana's sign-off
 
 
-Mobile
-------
+Mobile - iOS blocked, Android fine
+----------------------------------
 
 iOS build blocked
 	- Signing certificate expired
@@ -419,8 +449,8 @@ Android fine
 	- No one has touched that build since the last release
 
 
-Docs
-----
+Docs - API reference updated, migration guide NOT
+-------------------------------------------------
 
 I updated the API reference
 	- Two new endpoints
@@ -432,7 +462,7 @@ I did NOT update the migration guide
 One section of it in rendered markdown
 
 ```markdown
-## Mobile
+## Mobile - iOS blocked, Android fine
 
 iOS build blocked
 - Signing certificate expired
@@ -446,7 +476,8 @@ Android fine
 The lead, done wrong
 
 ```
-Great week! Payments migration is done and we're set for Thursday's cutover.
+Great week! Payments is basically done and we're set for Thursday's
+cutover - just a couple of small loose ends on mobile.
 ```
 
 Why it fails
@@ -455,12 +486,15 @@ Why it fails
 "Great week!"
 	- Filler, and a verdict the source never made
 
-"Migration is done"
+"Basically done"
 	- Drops "in staging"
 
 "Set for Thursday"
 	- Drops "pending Dana's sign-off"
 	- Drops the unexplained timeouts
+
+"Just a couple of small loose ends"
+	- Minimizes a blocked iOS build
 ```
 
 What survives that usually does not
@@ -482,6 +516,20 @@ The migration guide
 
 The Android build
 	- "No one has touched" - the source says nobody
+
+The headers
+	- Each carries its area's outcome
+	- Reading only the headers gives the overview
+```
+
+## Worked example, lead on your own work
+
+When you report work you did, your judgment is allowed - marked as yours
+
+```
+Good news with a caveat: I found why checkout was failing and fixed it,
+but I've only tested it in staging. My read is it's solid, but I'd hold
+off calling it done until it's verified in production.
 ```
 
 ## Worked example, spacing
@@ -489,7 +537,7 @@ The Android build
 Packed - child groups run together
 
 ```
-Three features gone in 2.0
+We removed three features in 2.0
 	- Legacy XML export
 		- No usage in 6 months of logs
 		- Sales confirmed no contracts need it
@@ -501,14 +549,14 @@ Three features gone in 2.0
 Spaced - full reply, every level of spacing
 
 ```
-Three features are removed for 2.0, and the config migration script
-is NOT tested on Windows.
+We removed three features for 2.0 and added two tools, but the config
+migration script is NOT tested on Windows.
 
 
-Removed
--------
+Removed - three features
+------------------------
 
-Three features gone in 2.0
+We removed three features in 2.0
 	- Legacy XML export
 		- No usage in 6 months of logs
 		- Sales confirmed no contracts need it
@@ -521,19 +569,19 @@ Three features gone in 2.0
 		- End of life
 		- CI matrix no longer runs it
 
-Changelog updated
+We updated the changelog
 	- Lists all three removals
 
 
-Added
------
+Added - two tools, one NOT tested on Windows
+--------------------------------------------
 
-Config migration script
+We added a config migration script, NOT tested on Windows
 	- Converts 1.x YAML to 2.0 TOML
 	- Tested on Linux and macOS
 	- NOT tested on Windows
 
-New `doctor` command
+We added a `doctor` command
 	- Checks config version
 	- Checks Python version
 ```
@@ -563,8 +611,11 @@ Before the next header
 ## Before sending
 
 ```
+Headers alone give the overview?
+Every header and base item states its outcome?
 Every base item clear alone?
 Every indent true?
+Siblings at the same level of detail?
 Every fact from the source present?
 Every hedge and qualifier intact?
 Every action keeps who did it, positive and negative?
@@ -572,7 +623,6 @@ Any comma-run left to split?
 Bullets and headers in the destination's syntax?
 Headers distinct from base items?
 Blank lines between items, groups and sections?
-Long response opens with a lead that matches its details?
-Lead is 1-2 sentences, not 3?
+Long response opens with an elevator lead that matches its details?
 No preamble beyond the lead, no sign-off?
 ```
