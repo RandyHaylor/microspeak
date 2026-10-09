@@ -7,7 +7,7 @@ description: |
       - Zero facts lost
       - Bullets and headers: the destination's standard syntax
       - Generous blank lines, like a textbook
-      - Long replies open with a 1-2 sentence plain lead
+      - Over 3 base items: open with a 1-2 sentence plain lead
 
   Trigger: Apply it to whatever was asked for, nothing else
       - "Use microspeak"/"brief bullets"/etc. -> your replies, until told otherwise
@@ -42,19 +42,19 @@ Prose converted to microspeak
 			- admin-portal
 
 
-Rules for shaping a response
+In short - full rules under ## Rules
 	- Base items at column 0
 		- Each a phrase clear on its own
 		- Children may be terse
 			- Parents supply the subject
 	- Whitespace is for the human reader
 		- Blank line between base items
-		- Two blank lines between sections
+		- Two blank lines before each header
 	- Capitalize each line
 	- Quoted strings and identifiers verbatim
 	- Over 3 base items
 		- Open with a lead
-			- 1-2 plain sentences, the bottom line
+			- 1-2 plain sentences, facts only
 		- Group areas under headers
 
 
@@ -70,6 +70,8 @@ Never lose a detail
 		- Unfinished work
 	- Long line = two ideas
 		- Split to parent + child
+		- Aim for 3-5 words a line
+			- Longer only when it will not split
 
 
 ## Format
@@ -77,7 +79,7 @@ Never lose a detail
 Plain default, when the destination sets no syntax
 
 ```
-Lead sentence with the bottom line, in plain prose.
+Lead sentence with the bottom line, in plain prose, facts only.
 
 
 Subject Header
@@ -104,7 +106,7 @@ Base item three
 Same shape in rendered markdown
 
 ```markdown
-Lead sentence with the bottom line, in plain prose.
+Lead sentence with the bottom line, in plain prose, facts only.
 
 
 ## Subject Header
@@ -179,12 +181,14 @@ Headers group a long response
 A long response opens with a lead
 	- Same trigger as headers
 	- 1-2 sentences of plain prose
-	- The bottom line
-		- Overall state
-		- Biggest risk
+	- The bottom line, as facts from the details
+		- What changed
+		- Biggest risk or blocker
 		- Anything the reader must act on
+	- No verdict the source does not make
+		- "Mostly on track" is your judgment, not a fact
+		- Source says it -> keep it
 	- Friendly through plain wording, not pleasantries
-		- "Mostly on track" is warm and still a fact
 		- "Great week!" is filler
 	- Qualifiers match the details below
 		- Details say "some" -> lead says "some"
@@ -198,13 +202,15 @@ A long response opens with a lead
 ```
 An indent asserts the child is
 	- Part of the parent
-	- Or caused by it
+	- Or its cause, or caused by it
 	- Or a detail of it
 	- Or evidence for it
 
 Read every indent aloud
-	- "<child> is part of <parent>"
-	- False or unsupported -> re-parent it
+	- "<child> is part of / a cause of / a detail of / evidence for <parent>"
+	- One must be true
+		- "Signing certificate expired" is a cause of "iOS build blocked"
+	- None true or unsupported -> re-parent it
 	- Unsure -> make it a sibling
 
 A false parent is fabrication
@@ -221,8 +227,9 @@ Peers never parent each other
 	- Two facts at the same level of detail are siblings
 	- Name the state they share, or make both base items
 	- Wrong - "US still on old index" holding "Cutover NOT scheduled"
-	- Wrong - "US region", a bare label
-	- Right - "US cutover still pending" holding both
+	- Wrong - "US region" holding both, a bare label
+	- Right - "US NOT cut over" holding both
+		- Built from the source's own "cutover"
 	- Wrong - "Finished on time" holding "Silently skipped 40 rows"
 		- Success does not contain failure
 
@@ -245,12 +252,15 @@ Orphan check, after placing every detail
 ```
 The structure already states
 	- Ownership, so drop "of" and "'s"
+		- Only where the indent shows it
+		- "Dana's sign-off" on one line keeps the "'s"
 	- Causality, so drop "because" and "so"
 	- Order, so drop "then" and "after that"
 
 Always drop
 	- "Basically"
-	- "Just"
+	- "Just", as emphasis
+		- "Just" meaning only or recently is a fact, keep it
 	- "Simply"
 	- "It turns out that"
 	- Vague counts of things you then list
@@ -260,6 +270,9 @@ Never drop
 	- Who did it
 		- Including I / we / you
 		- "I rewrote it" -> "I rewrote it", not "it was rewritten"
+		- Except a negative that already covers everyone
+			- "Parquet writer NOT touched" -> nobody touched it, me included
+			- "I did NOT touch it" claims less
 	- A qualifier
 		- "some"
 		- "most"
@@ -269,12 +282,15 @@ Never drop
 		- "not verified"
 	- Half of a contrast
 		- "his call, not mine"
+			- Only when the source says "not mine"
 	- A fact that only looks redundant
 		- "not done" and "still needed" differ
 	- Anything unfinished or untouched
 
-A comma-separated list is three ideas
+A comma-separated list is several ideas
 	- Split it into bulleted children
+	- Except a contrast
+		- "Suggested by platform, not required" stays one line
 ```
 
 ## Worked example
@@ -291,11 +307,11 @@ writer, which is still the slowest step.
 MicroSpeak
 
 ```
-I raised the S3 retry count 3 -> 5
-	- Platform team's call, not mine
+I bumped the S3 retry count 3 -> 5
+	- Platform team's suggestion
 	- I doubt it fixes the timeouts
-	- Failures were permission errors
-		- Not load
+		- Failures we saw were permission errors
+			- Not load
 
 Parquet writer NOT touched
 	- Still the slowest step
@@ -304,11 +320,15 @@ Parquet writer NOT touched
 What survives that usually does not
 
 ```
-"not mine"
-	- Kept, not collapsed to "platform team's call"
+"suggestion"
+	- Kept, not upgraded to "call" or "decision"
 
 The doubt and its reason
 	- Both, not just the doubt
+	- Reason nested under the doubt, as its evidence
+
+"we saw"
+	- Limits the claim to observed failures
 
 The untouched item
 	- Its own base item
@@ -334,9 +354,8 @@ still describes the old queue.
 MicroSpeak, plain default
 
 ```
-Release is mostly on track - payments looks good in staging but has
-unexplained timeouts, and iOS is blocked until Marco renews the signing
-certificate.
+Payments migration works in staging but had 3 unexplained timeouts, and
+iOS is blocked until Marco renews the signing certificate.
 
 
 Payments
@@ -397,7 +416,7 @@ Why it fails
 
 ```
 "Great week!"
-	- Filler, and cheer the facts do not support
+	- Filler, and a verdict the source never made
 
 "Migration is done"
 	- Drops "in staging"
@@ -428,7 +447,7 @@ The migration guide
 Packed - child groups run together
 
 ```
-Removed
+Three features gone in 2.0
 	- Legacy XML export
 		- No usage in 6 months of logs
 		- Sales confirmed no contracts need it
@@ -440,8 +459,8 @@ Removed
 Spaced - full reply, every level of spacing
 
 ```
-Most of the 2.0 cleanup is done - three things removed, but the config
-migration script is still untested on Windows.
+Three features are removed for 2.0, and the new config migration script
+is NOT tested on Windows yet.
 
 
 Removed

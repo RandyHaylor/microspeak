@@ -44,17 +44,17 @@ Asked for terse bullets:
 Asked to use the microspeak skill:
 
 ```
-I raised the retry count 3 -> 5
-	- Platform team's call
+I bumped the S3 retry count 3 -> 5
+	- Platform team's suggestion
 	- I doubt it fixes the timeouts
-	- Failures were permission errors
-		- Not load
+		- Failures we saw were permission errors
+			- Not load
 ```
 
 Details lost without microspeak:
 
 ```
-Whose call it was
+Whose suggestion it was
 The doubt it helps
 Why it may not
 ```
